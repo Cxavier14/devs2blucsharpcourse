@@ -1,0 +1,8 @@
+C:\Devs2Blu\Aula6\SlnAula6\src\Dev2Blu.ProjetosAula.Aula6Loops\bin\Debug\Dev2Blu.ProjetosAula.Aula6Loops.exe.config
+C:\Devs2Blu\Aula6\SlnAula6\src\Dev2Blu.ProjetosAula.Aula6Loops\bin\Debug\Dev2Blu.ProjetosAula.Aula6Loops.exe
+C:\Devs2Blu\Aula6\SlnAula6\src\Dev2Blu.ProjetosAula.Aula6Loops\bin\Debug\Dev2Blu.ProjetosAula.Aula6Loops.pdb
+C:\Devs2Blu\Aula6\SlnAula6\src\Dev2Blu.ProjetosAula.Aula6Loops\obj\Debug\Dev2Blu.ProjetosAula.Aula6Loops.csproj.AssemblyReference.cache
+C:\Devs2Blu\Aula6\SlnAula6\src\Dev2Blu.ProjetosAula.Aula6Loops\obj\Debug\Dev2Blu.ProjetosAula.Aula6Loops.csproj.SuggestedBindingRedirects.cache
+C:\Devs2Blu\Aula6\SlnAula6\src\Dev2Blu.ProjetosAula.Aula6Loops\obj\Debug\Dev2Blu.ProjetosAula.Aula6Loops.csproj.CoreCompileInputs.cache
+C:\Devs2Blu\Aula6\SlnAula6\src\Dev2Blu.ProjetosAula.Aula6Loops\obj\Debug\Dev2Blu.ProjetosAula.Aula6Loops.exe
+C:\Devs2Blu\Aula6\SlnAula6\src\Dev2Blu.ProjetosAula.Aula6Loops\obj\Debug\Dev2Blu.ProjetosAula.Aula6Loops.pdb

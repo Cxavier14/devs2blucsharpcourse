@@ -1,0 +1,8 @@
+C:\Devs2Blu\Aula5\SlnAula5\src\Devs2Blu.ProjetosAula5\bin\Debug\Devs2Blu.ProjetosAula5.exe.config
+C:\Devs2Blu\Aula5\SlnAula5\src\Devs2Blu.ProjetosAula5\bin\Debug\Devs2Blu.ProjetosAula5.exe
+C:\Devs2Blu\Aula5\SlnAula5\src\Devs2Blu.ProjetosAula5\bin\Debug\Devs2Blu.ProjetosAula5.pdb
+C:\Devs2Blu\Aula5\SlnAula5\src\Devs2Blu.ProjetosAula5\obj\Debug\Devs2Blu.ProjetosAula5.csproj.AssemblyReference.cache
+C:\Devs2Blu\Aula5\SlnAula5\src\Devs2Blu.ProjetosAula5\obj\Debug\Devs2Blu.ProjetosAula5.csproj.SuggestedBindingRedirects.cache
+C:\Devs2Blu\Aula5\SlnAula5\src\Devs2Blu.ProjetosAula5\obj\Debug\Devs2Blu.ProjetosAula5.csproj.CoreCompileInputs.cache
+C:\Devs2Blu\Aula5\SlnAula5\src\Devs2Blu.ProjetosAula5\obj\Debug\Devs2Blu.ProjetosAula5.exe
+C:\Devs2Blu\Aula5\SlnAula5\src\Devs2Blu.ProjetosAula5\obj\Debug\Devs2Blu.ProjetosAula5.pdb
