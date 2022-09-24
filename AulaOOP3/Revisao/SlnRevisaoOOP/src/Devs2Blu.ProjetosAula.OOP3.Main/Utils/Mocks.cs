@@ -28,11 +28,8 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
         {
             CargaPacientes();
             CargaMedicos();
+            CargaRecepcionista();
         }
-
-        List<string> Especialidades = new List<string> 
-        { "Clinica Geral", "Cardiologia", "Dermatologia", "Endocrinologia","Geriatria", "Ginecologia",
-        "Mastologia", "Neurologia", "Oftalmologia", "Ortopedia", "Pediatria"};
 
         public void CargaPacientes()
         {
@@ -46,12 +43,18 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
         public void CargaMedicos()
         {
             Random rd = new Random();
-            for (int i = 0; i < 10; i++)
+            string[] especialidade = { "Clinico Geral", "Cardiologista", "Endocrinologista", "Neurologista", "Oftalmologista", "Pediatra" };
+
+            for (int i = 0; i < 6; i++)
             {
-                string especialidades = Especialidades[rd.Next(1,11)].ToString();
-                Medico medico = new Medico(i, $"Medico {i}", $"{i}{i}{i}887744", rd.Next(1, 1000), especialidades);
+                Medico medico = new Medico(i, $"Médico {i}", $"{i}{i}{i}887744", rd.Next(1, 1000), especialidade[rd.Next(0, especialidade.Length)]);
                 ListaMedicos.Add(medico);
             }
+        }
+
+        public void CargaRecepcionista()
+        {
+
         }
     }
 }

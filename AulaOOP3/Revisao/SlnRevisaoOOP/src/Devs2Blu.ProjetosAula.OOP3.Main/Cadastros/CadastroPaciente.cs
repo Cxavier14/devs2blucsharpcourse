@@ -26,13 +26,22 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                 Console.WriteLine("----- 2 - Cadastro de Pacientes -----");
                 Console.WriteLine("----- 3 - Alterar Paciente -----");
                 Console.WriteLine("-----------------------");
-                Console.WriteLine("----- 0 - Sair -----");
+                Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
                 Int32.TryParse(Console.ReadLine(), out opcao);
 
                 switch (opcao)
                 {
                     case (int)MenuEnums.LISTAR:
                         ListarPacientes();
+                        break;
+                    case (int)MenuEnums.CADASTRAR:
+                        CadastrarPaciente();
+                        break;
+                    case (int)MenuEnums.ALTERAR:
+                        AlterarPaciente();
+                        break;
+                    case (int)MenuEnums.EXCLUIR:
+                        ExcluirPaciente();
                         break;
                     default:
                         break;
@@ -57,17 +66,17 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 
         public void CadastrarPaciente()
         {
-
+            Console.WriteLine("Em construção!");
         }
 
         public void AlterarPaciente()
         {
-
+            Console.WriteLine("Em construção!");
         }
 
         public void ExcluirPaciente()
         {
-
+            Console.WriteLine("Em construção!");
         }
     }
 }
