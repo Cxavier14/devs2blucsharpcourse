@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 {
-    public class CadastroMedico
+    public class CadastroFornecedor
     {
-        public CadastroMedico()
+        public CadastroFornecedor()
         {
 
         }
@@ -20,11 +20,10 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             Int32 opcao;
             do
             {
-                Console.WriteLine("***** Cadastro de Medico *****");
-                Console.WriteLine("----- 1 - Lista de Medicos -----");
-                Console.WriteLine("----- 2 - Cadastro de Medico -----");
-                Console.WriteLine("----- 3 - Alterar Medico -----");
-                Console.WriteLine("----- 4 - Excluir Medico -----");
+                Console.WriteLine("***** Cadastro de Fornecedor *****");
+                Console.WriteLine("----- 1 - Lista de Fornecedores -----");
+                Console.WriteLine("----- 2 - Cadastro de Fornecedor -----");
+                Console.WriteLine("----- 3 - Alterar Fornecedor -----");
                 Console.WriteLine("-----------------------");
                 Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
                 Int32.TryParse(Console.ReadLine(), out opcao);
@@ -32,52 +31,53 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                 switch (opcao)
                 {
                     case (int)MenuEnums.LISTAR:
-                        ListarMedicos();
+                        ListarFornecedores();
                         break;
                     case (int)MenuEnums.CADASTRAR:
-                        CadastrarMedico();
+                        CadastrarFornecedor();
                         break;
                     case (int)MenuEnums.ALTERAR:
-                        AlterarMedico();
+                        AlterarFornecedor();
                         break;
                     case (int)MenuEnums.EXCLUIR:
-                        ExcluirMedico();
+                        ExcluirFornecedor();
                         break;
                     default:
                         break;
                 }
+
             } while (!opcao.Equals((int)MenuEnums.SAIR));
         }
 
-        public void ListarMedicos()
+        public void ListarFornecedores()
         {
             Console.Clear();
 
-            foreach (Medico medico in Program.Mock.ListaMedicos)
+            foreach(Fornecedor fornecedor in Program.Mock.ListaFornecedores)
             {
                 Console.WriteLine("-----------------------------------");
-                Console.WriteLine($"Medico: {medico.CodigoMedico}");
-                Console.WriteLine($"Nome: {medico.Nome}");
-                Console.WriteLine($"CRM: {medico.CRM}");
-                Console.WriteLine($"Especialidade: {medico.Especialidade}");
+                Console.WriteLine($"Fornecedor: {fornecedor.CodigoFornecedor}");
+                Console.WriteLine($"Nome: {fornecedor.Nome}");
+                Console.WriteLine($"CPF: {fornecedor.CGCCPF}");
+                Console.WriteLine($"Tipo de Fornecedor: {fornecedor.TipoFornecedor}");
                 Console.WriteLine("-----------------------------------\n");
             }
         }
 
-        public void CadastrarMedico()
+        public void CadastrarFornecedor()
         {
             Console.Clear();
-            //Program.Mock.ListaMedicos.Add(novoMedico);
+            //Program.Mock.ListaFornecedores.Add(novoFornecedor);
             Console.WriteLine("Em construção!");
         }
 
-        public void AlterarMedico()
+        public void AlterarFornecedor()
         {
             Console.Clear();
             Console.WriteLine("Em construção!");
         }
 
-        public void ExcluirMedico()
+        public void ExcluirFornecedor()
         {
             Console.Clear();
             Console.WriteLine("Em construção!");

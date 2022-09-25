@@ -23,7 +23,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             {
                 Console.WriteLine("***** Cadastro de Pacientes *****");
                 Console.WriteLine("----- 1 - Lista de Pacientes -----");
-                Console.WriteLine("----- 2 - Cadastro de Pacientes -----");
+                Console.WriteLine("----- 2 - Cadastro de Paciente -----");
                 Console.WriteLine("----- 3 - Alterar Paciente -----");
                 Console.WriteLine("-----------------------");
                 Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
@@ -66,16 +66,20 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 
         public void CadastrarPaciente()
         {
+            Console.Clear();
+            //Program.Mock.ListaPacientes.Add(novoPaciente);
             Console.WriteLine("Em construção!");
         }
 
         public void AlterarPaciente()
         {
+            Console.Clear();
             Console.WriteLine("Em construção!");
         }
 
         public void ExcluirPaciente()
         {
+            Console.Clear();
             Console.WriteLine("Em construção!");
         }
     }

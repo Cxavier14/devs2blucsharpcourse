@@ -31,7 +31,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                 switch (opcao)
                 {
                     case (int)MenuEnums.LISTAR:
-                        ListarRecepcionista();
+                        ListarRecepcionistas();
                         break;
                     case (int)MenuEnums.CADASTRAR:
                         CadastrarRecepcionista();
@@ -40,7 +40,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                         AlterarRecepcionista();
                         break;
                     case (int)MenuEnums.EXCLUIR:
-                        ExcluirRecepcionistae();
+                        ExcluirRecepcionista();
                         break;
                     default:
                         break;
@@ -48,7 +48,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             } while (!opcao.Equals((int)MenuEnums.SAIR));
         }
 
-        public void ListarRecepcionista()
+        public void ListarRecepcionistas()
         {
             Console.Clear();
 
@@ -58,23 +58,27 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                 Console.WriteLine($"Recepcionista: {recepcionista.CodigoRecepcionista}");
                 Console.WriteLine($"Nome: {recepcionista.Nome}");
                 Console.WriteLine($"CPF: {recepcionista.CGCCPF}");
-                Console.WriteLine($"Convenio: {recepcionista.Setor}");
+                Console.WriteLine($"Setor: {recepcionista.Setor}");
                 Console.WriteLine("-----------------------------------\n");
             }
         }
 
         public void CadastrarRecepcionista()
         {
+            Console.Clear();
+            //Program.Mock.ListaRecepcionistas.Add(novaRecepcionista);
             Console.WriteLine("Em construção!");
         }
 
         public void AlterarRecepcionista()
         {
+            Console.Clear();
             Console.WriteLine("Em construção!");
         }
 
-        public void ExcluirRecepcionistae()
+        public void ExcluirRecepcionista()
         {
+            Console.Clear();
             Console.WriteLine("Em construção!");
         }
 

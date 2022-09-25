@@ -28,14 +28,18 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
         {
             CargaPacientes();
             CargaMedicos();
-            CargaRecepcionista();
+            CargaRecepcionistas();
+            CargaFornecedor();
         }
 
         public void CargaPacientes()
         {
+            Random rd = new Random();
+            string[] convenios = { "Unimed", "Clinipan", "Amil", "SulAmerica" };
+
             for (int i = 0; i < 10; i++)
             {
-                Paciente paciente = new Paciente(i, $"Paciente {i}", $"{i}{i}{i}888444666", "Unimed");
+                Paciente paciente = new Paciente(i, $"Paciente {i}", $"{i}{i}{i}888444666", convenios[rd.Next(0, convenios.Length)]);
                 ListaPacientes.Add(paciente);
             }
         }
@@ -43,18 +47,42 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
         public void CargaMedicos()
         {
             Random rd = new Random();
-            string[] especialidade = { "Clinico Geral", "Cardiologista", "Endocrinologista", "Neurologista", "Oftalmologista", "Pediatra" };
+            string[] especialidade = { "Clinico Geral", "Cardiologista", "Endocrinologista",
+                                        "Neurologista", "Oftalmologista", "Pediatra" };
 
             for (int i = 0; i < 6; i++)
             {
-                Medico medico = new Medico(i, $"Médico {i}", $"{i}{i}{i}887744", rd.Next(1, 1000), especialidade[rd.Next(0, especialidade.Length)]);
+                Medico medico = new Medico(i, $"Médico {i}", $"{i}{i}{i}887744", rd.Next(1, 1000), especialidade[rd.Next(0, 
+                    especialidade.Length)]);
                 ListaMedicos.Add(medico);
             }
         }
 
-        public void CargaRecepcionista()
+        public void CargaRecepcionistas()
         {
+            Random rd = new Random();
+            string[] setores = { "Ambulatórios / Consultas", "Diagnósticos / Exames", "Unidade de Internação",
+                    "Centro Cirúrgico", "Terapia Intensiva - UTI", "Pronto Socorro 24h", "Serviços Assistenciais" };
 
+            for (int i = 0; i < 10; i++)
+            {
+                Recepcionista recepcionista = new Recepcionista(i, $"Recepcionista {i}", $"{rd.Next(160, 777)}55566677", 
+                    setores[rd.Next(0, setores.Length)]);
+                ListaRecepcionistas.Add(recepcionista);
+            }
+        }
+
+        public void CargaFornecedor()
+        {
+            Random rd = new Random();
+            string[] tiposFornecedores = { "Medicamentos Geral", "Medicamentos Importados", "Materiais de Limpeza", "Materiais Cirurgicos" };
+
+            for (int i = 0; i < 10; i++)
+            {
+                Fornecedor fornecedor = new Fornecedor(i, $"Fornecedor {i}", $"{rd.Next(122,999)}45678901234", 
+                    tiposFornecedores[rd.Next(0, tiposFornecedores.Length)]);
+                ListaFornecedores.Add(fornecedor);
+            }
         }
     }
 }
