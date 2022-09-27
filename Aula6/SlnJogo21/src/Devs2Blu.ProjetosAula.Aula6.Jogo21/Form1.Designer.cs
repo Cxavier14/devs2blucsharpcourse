@@ -200,6 +200,7 @@ namespace Devs2Blu.ProjetosAula.Aula6.Jogo21
             this.btnNovoJogo.TabIndex = 4;
             this.btnNovoJogo.Text = "Novo Jogo";
             this.btnNovoJogo.UseVisualStyleBackColor = false;
+            this.btnNovoJogo.Click += new System.EventHandler(this.btnNovoJogo_Click);
             // 
             // Form1
             // 

@@ -33,11 +33,14 @@ namespace Devs2Blu.ProjetosAula.Aula6.Jogo21
         private void Form1_Load(object sender, EventArgs e)
         {
             txtConsole.Text += "\r\n Pressione \"Iniciar\" para começar o jogo.";
-
+            txtPlayer1.Enabled = false;
+            btnPlayer1.Enabled = false;
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+            txtPlayer1.Enabled = true;
+            btnPlayer1.Enabled = true;
             txtConsole.Text += "\r\n Primeira Rodada";
             txtConsole.Text += "\r\n Informe um número de 1 a 20";
             txtPlayer1.Focus();
@@ -48,23 +51,29 @@ namespace Devs2Blu.ProjetosAula.Aula6.Jogo21
             txtConsole.Enabled = true;
             txtConsole.Text += "\r\n Player 1 escolheu seu número...";
             SomaP1 = Int32.Parse(txtPlayer1.Text);
-            Thread.Sleep(2000);
+            txtResultP1.Text += txtPlayer1.Text;
             GeraNumeroPlayer2();
-
+            GeraNumeroPc();
+            SomaResultado();
+            VerificaVencedor(PontuacaoP1, PontuacaoP2);
         }
 
-        //Exemplo Metodo sem retornar valor
         private void GeraNumeroPlayer2()
         {
             Random rd = new Random();
             SomaP2 = rd.Next(1, 20);
-            GeradoPC = rd.Next(1, 20);
             txtPlayer2.Text = SomaP2.ToString();
             txtConsole.Text += "\r\n Player 2 escolheu seu número...";
-            txtConsole.Text += $"\r\n Número sorteado {GeradoPC}...";
-            txtResultP1.Text += txtPlayer1.Text;
             txtResultP2.Text += txtPlayer2.Text;
-            SomaResultado();
+            Thread.Sleep(1500);
+        }
+
+        private void GeraNumeroPc()
+        {
+            Random rd = new Random();
+            GeradoPC = rd.Next(1, 20);
+            txtConsole.Text += $"\r\n Número sorteado {GeradoPC}...";
+            Thread.Sleep(1500);
         }
 
         private void SomaResultado()
@@ -75,9 +84,8 @@ namespace Devs2Blu.ProjetosAula.Aula6.Jogo21
             txtResultP2.Text = SomaP2.ToString();
             AtribuiPontosP1(SomaP1);
             AtribuiPontosP2(SomaP2);
-            txtResultP1.Text = $"{PontuacaoP1.ToString()} Pontos";
-            txtResultP2.Text = $"{PontuacaoP2.ToString()} Pontos";
-            VerificaVencedor(PontuacaoP1, PontuacaoP2);
+            txtResultP1.Text = $"{PontuacaoP1} Pontos";
+            txtResultP2.Text = $"{PontuacaoP2} Pontos";
         }
 
         private void AtribuiPontosP1(int pontos)
@@ -170,14 +178,20 @@ namespace Devs2Blu.ProjetosAula.Aula6.Jogo21
         {
             if (player1 > player2)
             {
+                txtResultP1.Text = $"{PontuacaoP1} Pontos";
+                txtResultP2.Text = $"{PontuacaoP2} Pontos";
                 MessageBox.Show("Player 1 é o vencedor!");
             }
             else if (player1 < player2)
             {
+                txtResultP1.Text = $"{PontuacaoP1} Pontos";
+                txtResultP2.Text = $"{PontuacaoP2} Pontos";
                 MessageBox.Show("Player 2 é o vencedor!");
             }
             else
             {
+                txtResultP1.Text = $"{PontuacaoP1} Pontos";
+                txtResultP2.Text = $"{PontuacaoP2} Pontos";
                 MessageBox.Show("Empatou!");
             }
         }
@@ -190,6 +204,18 @@ namespace Devs2Blu.ProjetosAula.Aula6.Jogo21
         private void txtResultP2_TextChanged(object sender, EventArgs e)
         {
             txtResultP2.Enabled = false;
+        }
+
+        private void btnNovoJogo_Click(object sender, EventArgs e)
+        {
+            txtConsole.Clear();
+            txtPlayer1.Clear();
+            txtPlayer2.Clear();
+            txtResultP1.Clear();
+            txtResultP2.Clear();
+            txtConsole.Text += "Primeira Rodada";
+            txtConsole.Text += "\r\n Informe um número de 1 a 20";
+            txtPlayer1.Focus();
         }
     }
 }
