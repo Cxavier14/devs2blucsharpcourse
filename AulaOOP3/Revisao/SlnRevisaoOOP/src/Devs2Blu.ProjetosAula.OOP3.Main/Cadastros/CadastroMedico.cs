@@ -1,4 +1,5 @@
-﻿using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
+﻿using Devs2Blu.ProjetosAula.OOP3.Main.Interfaces;
+using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
 using Devs2Blu.ProjetosAula.OOP3.Models.Model;
 using System;
 using System.Collections.Generic;
@@ -8,48 +9,28 @@ using System.Threading.Tasks;
 
 namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 {
-    public class CadastroMedico
+    public class CadastroMedico : IMenuCadastro
     {
         public CadastroMedico()
         {
 
         }
 
-        public void MenuCadastro()
+        public Int32 MenuCadastro()
         {
             Int32 opcao;
-            do
-            {
-                Console.WriteLine("***** Cadastro de Medico *****");
-                Console.WriteLine("----- 1 - Lista de Medicos -----");
-                Console.WriteLine("----- 2 - Cadastro de Medico -----");
-                Console.WriteLine("----- 3 - Alterar Medico -----");
-                Console.WriteLine("----- 4 - Excluir Medico -----");
-                Console.WriteLine("-----------------------");
-                Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
-                Int32.TryParse(Console.ReadLine(), out opcao);
-
-                switch (opcao)
-                {
-                    case (int)MenuEnums.LISTAR:
-                        ListarMedicos();
-                        break;
-                    case (int)MenuEnums.CADASTRAR:
-                        CadastrarMedico();
-                        break;
-                    case (int)MenuEnums.ALTERAR:
-                        AlterarMedico();
-                        break;
-                    case (int)MenuEnums.EXCLUIR:
-                        ExcluirMedico();
-                        break;
-                    default:
-                        break;
-                }
-            } while (!opcao.Equals((int)MenuEnums.SAIR));
+            Console.WriteLine("***** Cadastro de Medico *****");
+            Console.WriteLine("----- 1 - Lista de Medicos -----");
+            Console.WriteLine("----- 2 - Cadastro de Medico -----");
+            Console.WriteLine("----- 3 - Alterar Medico -----");
+            Console.WriteLine("----- 4 - Excluir Medico -----");
+            Console.WriteLine("-----------------------");
+            Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
+            Int32.TryParse(Console.ReadLine(), out opcao);
+            return opcao;
         }
 
-        public void ListarMedicos()
+        public void Listar()
         {
             Console.Clear();
 
@@ -64,20 +45,20 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             }
         }
 
-        public void CadastrarMedico()
+        public void Cadastrar()
         {
             Console.Clear();
             //Program.Mock.ListaMedicos.Add(novoMedico);
             Console.WriteLine("Em construção!");
         }
 
-        public void AlterarMedico()
+        public void Alterar()
         {
             Console.Clear();
             Console.WriteLine("Em construção!");
         }
 
-        public void ExcluirMedico()
+        public void Excluir()
         {
             Console.Clear();
             Console.WriteLine("Em construção!");

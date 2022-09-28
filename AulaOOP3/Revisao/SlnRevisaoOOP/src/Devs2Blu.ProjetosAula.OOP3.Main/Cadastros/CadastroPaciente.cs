@@ -3,53 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Devs2Blu.ProjetosAula.OOP3.Main.Interfaces;
 using Devs2Blu.ProjetosAula.OOP3.Main.Utils;
 using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
 using Devs2Blu.ProjetosAula.OOP3.Models.Model;
 
 namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 {
-    public class CadastroPaciente
+    public class CadastroPaciente : IMenuCadastro
     {
         public CadastroPaciente()
         {
 
         }
 
-        public void MenuCadastro()
-        {
-            Int32 opcao;
-            do
-            {
-                Console.WriteLine("***** Cadastro de Pacientes *****");
-                Console.WriteLine("----- 1 - Lista de Pacientes -----");
-                Console.WriteLine("----- 2 - Cadastro de Paciente -----");
-                Console.WriteLine("----- 3 - Alterar Paciente -----");
-                Console.WriteLine("-----------------------");
-                Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
-                Int32.TryParse(Console.ReadLine(), out opcao);
-
-                switch (opcao)
-                {
-                    case (int)MenuEnums.LISTAR:
-                        ListarPacientes();
-                        break;
-                    case (int)MenuEnums.CADASTRAR:
-                        CadastrarPaciente();
-                        break;
-                    case (int)MenuEnums.ALTERAR:
-                        AlterarPaciente();
-                        break;
-                    case (int)MenuEnums.EXCLUIR:
-                        ExcluirPaciente();
-                        break;
-                    default:
-                        break;
-                }
-            } while (!opcao.Equals((int)MenuEnums.SAIR));
-        }
-
-        public void ListarPacientes()
+        private void ListarPacientes()
         {
             Console.Clear();
 
@@ -64,23 +32,59 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             }
         }
 
-        public void CadastrarPaciente()
+        private void CadastrarPacientes(Paciente novoPaciente)
         {
-            Console.Clear();
-            //Program.Mock.ListaPacientes.Add(novoPaciente);
-            Console.WriteLine("Em construção!");
+            Program.Mock.ListaPacientes.Add(novoPaciente);
         }
 
-        public void AlterarPaciente()
+        private void AlterarPacientes(Paciente paciente)
         {
-            Console.Clear();
-            Console.WriteLine("Em construção!");
+
         }
 
-        public void ExcluirPaciente()
+        private void ExcluirPacientes(Paciente paciente)
         {
-            Console.Clear();
-            Console.WriteLine("Em construção!");
+
         }
+
+        #region FACADE
+        public Int32 MenuCadastro()
+        {
+            Int32 opcao;
+            Console.Clear();
+            Console.WriteLine("***** Cadastro de Pacientes *****");
+            Console.WriteLine("----- 1 - Lista de Pacientes -----");
+            Console.WriteLine("----- 2 - Cadastro de Paciente -----");
+            Console.WriteLine("----- 3 - Alterar Paciente -----");
+            Console.WriteLine("----- 4 - Excluir Paciente -----");
+            Console.WriteLine("-----------------------");
+            Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
+            Int32.TryParse(Console.ReadLine(), out opcao);
+            return opcao;
+        }
+
+        public void Listar()
+        {
+            ListarPacientes();
+        }
+
+        public void Cadastrar()
+        {
+            Paciente paciente = new Paciente();
+            CadastrarPacientes((Paciente)paciente);
+        }
+
+        public void Alterar()
+        {
+            Paciente paciente = new Paciente();
+            AlterarPacientes((Paciente)paciente);
+        }
+
+        public void Excluir()
+        {
+            Paciente paciente = new Paciente();
+            ExcluirPacientes((Paciente)paciente);
+        }
+        #endregion
     }
 }

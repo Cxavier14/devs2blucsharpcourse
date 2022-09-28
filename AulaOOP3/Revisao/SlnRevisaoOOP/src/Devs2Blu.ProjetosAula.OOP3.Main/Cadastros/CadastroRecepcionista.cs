@@ -1,4 +1,5 @@
-﻿using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
+﻿using Devs2Blu.ProjetosAula.OOP3.Main.Interfaces;
+using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
 using Devs2Blu.ProjetosAula.OOP3.Models.Model;
 using System;
 using System.Collections.Generic;
@@ -8,47 +9,29 @@ using System.Threading.Tasks;
 
 namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 {
-    public class CadastroRecepcionista
+    public class CadastroRecepcionista : IMenuCadastro
     {
         public CadastroRecepcionista()
         {
 
         }
 
-        public void MenuCadastro()
+        public Int32 MenuCadastro()
         {
             Int32 opcao;
-            do
-            {
-                Console.WriteLine("***** Cadastro de Recepcionista *****");
-                Console.WriteLine("----- 1 - Lista de Recepcionista -----");
-                Console.WriteLine("----- 2 - Cadastro de Recepcionista -----");
-                Console.WriteLine("----- 3 - Alterar Recepcionista -----");
-                Console.WriteLine("-----------------------");
-                Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
-                Int32.TryParse(Console.ReadLine(), out opcao);
+            Console.Clear();
+            Console.WriteLine("***** Cadastro de Recepcionista *****");
+            Console.WriteLine("----- 1 - Lista de Recepcionista -----");
+            Console.WriteLine("----- 2 - Cadastro de Recepcionista -----");
+            Console.WriteLine("----- 3 - Alterar Recepcionista -----");
+            Console.WriteLine("-----------------------");
+            Console.WriteLine("----- 0 - Voltar Para o Menu Principal -----");
+            Int32.TryParse(Console.ReadLine(), out opcao);
+            return opcao;
 
-                switch (opcao)
-                {
-                    case (int)MenuEnums.LISTAR:
-                        ListarRecepcionistas();
-                        break;
-                    case (int)MenuEnums.CADASTRAR:
-                        CadastrarRecepcionista();
-                        break;
-                    case (int)MenuEnums.ALTERAR:
-                        AlterarRecepcionista();
-                        break;
-                    case (int)MenuEnums.EXCLUIR:
-                        ExcluirRecepcionista();
-                        break;
-                    default:
-                        break;
-                }
-            } while (!opcao.Equals((int)MenuEnums.SAIR));
         }
 
-        public void ListarRecepcionistas()
+        public void Listar()
         {
             Console.Clear();
 
@@ -63,20 +46,20 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             }
         }
 
-        public void CadastrarRecepcionista()
+        public void Cadastrar()
         {
             Console.Clear();
             //Program.Mock.ListaRecepcionistas.Add(novaRecepcionista);
             Console.WriteLine("Em construção!");
         }
 
-        public void AlterarRecepcionista()
+        public void Alterar()
         {
             Console.Clear();
             Console.WriteLine("Em construção!");
         }
 
-        public void ExcluirRecepcionista()
+        public void Excluir()
         {
             Console.Clear();
             Console.WriteLine("Em construção!");
