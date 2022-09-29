@@ -16,7 +16,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main
         public static Mocks Mock { get; set; }
         static void Main(string[] args)
         {
-            Int32 opcao = 0, opcaoMenuCadastros = 0;
+            Int32 opcao = (int)MenuEnums.SAIR, opcaoMenuCadastros = (int)MenuEnums.SAIR;
             Mock = new Mocks();
             IMenuCadastro menuCadastros;
             do
@@ -77,22 +77,6 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main
                 }
 
             } while (!opcao.Equals((int)MenuEnums.SAIR));
-        }
-
-        public static void ViewListPacientes()
-        {
-            Console.Clear();
-
-            foreach (Paciente paciente in Mock.ListaPacientes)
-            {
-                Console.WriteLine("-----------------------------------");
-                Console.WriteLine($"Nome: {paciente.CodigoPaciente}");
-                Console.WriteLine($"Nome: {paciente.Nome}");
-                Console.WriteLine($"Nome: {paciente.CGCCPF}");
-                Console.WriteLine($"Nome: {paciente.Convenio}");
-                Console.WriteLine($"Nome: {paciente.TipoPessoa}");
-                Console.WriteLine("-----------------------------------\n");
-            }
         }
     }
 }
