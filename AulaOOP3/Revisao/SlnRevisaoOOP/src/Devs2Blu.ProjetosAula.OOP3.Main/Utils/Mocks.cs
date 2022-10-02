@@ -78,7 +78,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
 
             for (int i = 0; i < 10; i++)
             {
-                Fornecedor fornecedor = new Fornecedor(i, $"Fornecedor {i}", $"{rd.Next(122, 999)}45678901234",
+                Fornecedor fornecedor = new Fornecedor(i, $"Fornecedor {i}", $"{rd.Next(122, 999)}000134",
                     tiposFornecedores[rd.Next(0, tiposFornecedores.Length)]);
                 ListaFornecedores.Add(fornecedor);
             }

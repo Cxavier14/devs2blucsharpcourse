@@ -158,7 +158,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 
             Program.Mock.ListaMedicos.Remove(medico);
             Console.Clear();
-            Console.WriteLine("Dados excluido com sucesso!");
+            Console.WriteLine("Dados excluidos com sucesso!");
             Console.WriteLine("Pressione Enter para voltar ao menu!");
             Console.ReadLine();
         }

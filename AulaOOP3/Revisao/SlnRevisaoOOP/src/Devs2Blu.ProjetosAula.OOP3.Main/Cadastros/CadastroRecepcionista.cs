@@ -68,7 +68,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             int codigoRecepcionista = Int32.Parse($"{codigo}{rd.Next(1, 99)}");
             
             Program.Mock.ListaRecepcionistas.Add(new Recepcionista(codigoRecepcionista, nome, cpf, setor));
-            Console.WriteLine("Dados cadastrado com sucesso!");
+            Console.WriteLine("Dados cadastrados com sucesso!");
         }
 
         public void Alterar()
