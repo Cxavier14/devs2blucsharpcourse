@@ -52,8 +52,8 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
 
             for (int i = 0; i < 6; i++)
             {
-                Medico medico = new Medico(i, $"Médico {i}", $"{i}{i}{i}887744", rd.Next(1, 1000), especialidade[rd.Next(0, 
-                    especialidade.Length)]);
+                Medico medico = new Medico(i, $"Médico {i}", $"{i}{i}{i}887744", rd.Next(1, 1000),
+                    especialidade[rd.Next(0, especialidade.Length)]);
                 ListaMedicos.Add(medico);
             }
         }
@@ -61,12 +61,11 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
         public void CargaRecepcionistas()
         {
             Random rd = new Random();
-            string[] setores = { "Ambulatórios / Consultas", "Diagnósticos / Exames", "Unidade de Internação",
-                    "Centro Cirúrgico", "Terapia Intensiva - UTI", "Pronto Socorro 24h", "Serviços Assistenciais" };
+            string[] setores = { "Ambulatório", "Exames", "Internação", "Centro Cirúrgico", "UTI", "Pronto Socorro", "Serviços Assistenciais" };
 
             for (int i = 0; i < 10; i++)
             {
-                Recepcionista recepcionista = new Recepcionista(i, $"Recepcionista {i}", $"{rd.Next(160, 777)}55566677", 
+                Recepcionista recepcionista = new Recepcionista(i, $"Recepcionista {i}", $"{rd.Next(160, 777)}55566677",
                     setores[rd.Next(0, setores.Length)]);
                 ListaRecepcionistas.Add(recepcionista);
             }
@@ -79,7 +78,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
 
             for (int i = 0; i < 10; i++)
             {
-                Fornecedor fornecedor = new Fornecedor(i, $"Fornecedor {i}", $"{rd.Next(122,999)}45678901234", 
+                Fornecedor fornecedor = new Fornecedor(i, $"Fornecedor {i}", $"{rd.Next(122, 999)}000134",
                     tiposFornecedores[rd.Next(0, tiposFornecedores.Length)]);
                 ListaFornecedores.Add(fornecedor);
             }
