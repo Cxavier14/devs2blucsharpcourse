@@ -49,6 +49,9 @@
   <ItemGroup>
     <Compile Include="Data\ConnectionMySQL.cs" />
     <Compile Include="Data\ConvenioRepository.cs" />
+    <Compile Include="Data\EnderecoRepository.cs" />
+    <Compile Include="Data\PacienteRepository.cs" />
+    <Compile Include="Data\PessoaRepository.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +71,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +91,21 @@
       <Project>{d0959867-d6dd-41f9-b038-b43e93d28dae}</Project>
       <Name>Devs2Blu.ProjetosAula.SistemaCadastro.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\image\btnIconSalvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\image\btnIconInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\image\btnIconExcluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\image\btnUpdate.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\image\Clean.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

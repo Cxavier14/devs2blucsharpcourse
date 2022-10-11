@@ -18,7 +18,15 @@ namespace Devs2Blu.ProjetosAula.SistemaCadastro.Models.Model
         public String UF { get; set; }
 
         public Endereco()
-        { }
+        {
+            Pessoa = new Pessoa();
+            CEP = "";
+            Rua = "";
+            Numero = 0;
+            Bairro = "";
+            Cidade = "";
+            UF = "";
+        }
 
         public Endereco(int id, Pessoa pessoa, string cEP, string rua, int numero, string bairro, string cidade, string uF)
         {
