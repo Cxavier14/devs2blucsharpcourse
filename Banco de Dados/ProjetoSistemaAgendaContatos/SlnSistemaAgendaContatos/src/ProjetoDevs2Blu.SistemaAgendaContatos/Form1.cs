@@ -131,6 +131,9 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            Contato contato = new Contato();
+            contato.Id = int.Parse(dgvContatos.CurrentRow.Cells[0].Value.ToString());
+
             MySqlConnection conn = ConnectionMySQL.GetConnection();
             
             ContatoForm.Nome = txtNome.Text;
@@ -143,8 +146,9 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos
             ContatoForm.Cidade = txtCidade.Text;
             EstadoForm.Id = (int)cboUF.SelectedValue;
 
-            if (ContatoRepository.Update(ContatoForm, EstadoForm, conn))
-                MessageBox.Show($"Contato {ContatoForm.Nome} alterado com sucesso!", "Contato alterado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            if (ContatoRepository.Update(ContatoForm, EstadoForm, contato.Id, conn))
+                MessageBox.Show($"Contato {ContatoForm.Nome} alterado com sucesso!", "Contato alterado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            LimpaContatos();
         }
         private void dgvContatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

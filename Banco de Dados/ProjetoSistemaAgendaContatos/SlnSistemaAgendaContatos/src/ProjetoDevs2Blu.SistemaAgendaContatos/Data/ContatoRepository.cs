@@ -52,7 +52,7 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos.Data
 
         }
 
-        public bool Update(Contato contato, Estado estado, MySqlConnection conn)
+        public bool Update(Contato contato, Estado estado, int id, MySqlConnection conn)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos.Data
                 cmd.Parameters.Add("bairro", MySqlDbType.VarChar, 45).Value = contato.Bairro;
                 cmd.Parameters.Add("cidade", MySqlDbType.VarChar, 45).Value = contato.Cidade;
 
-                cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = contato.Id;
+                cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
                 return false;
@@ -122,7 +122,7 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos.Data
                 MySqlConnection conn = ConnectionMySQL.GetConnection();
                 MySqlCommand cmd = new MySqlCommand(SQL_SELECT_CONTATO_BY_ID, conn);
                 cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idContato;
-                                
+
                 MySqlDataReader reader = cmd.ExecuteReader();
                 return reader;
             }
