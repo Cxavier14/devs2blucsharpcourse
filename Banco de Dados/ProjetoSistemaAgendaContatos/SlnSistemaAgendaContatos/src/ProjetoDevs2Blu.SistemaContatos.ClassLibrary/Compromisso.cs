@@ -12,6 +12,7 @@ namespace ProjetoDevs2Blu.SistemaContatos.ClassLibrary
     {
         public Int32 Id { get; set; }
         public String Titulo { get; set; }
+        public Contato Contato { get; set; }
         public DiasSemana Dia { get; set; }
         public DateTime Data { get; set; }
         public FlStatus Status { get; set; }
@@ -30,10 +31,21 @@ namespace ProjetoDevs2Blu.SistemaContatos.ClassLibrary
             Status = FlStatus.A;
         }
 
-        public Compromisso(int id, string titulo, DiasSemana dia, DateTime data, FlStatus status)
+        public Compromisso(int id, string titulo, DiasSemana dia, DateTime data, Contato contato)
         {
             Id = id;
             Titulo = titulo;
+            Contato = contato;
+            Dia = dia;
+            Data = data;
+            Status = FlStatus.A;
+        }
+
+        public Compromisso(int id, string titulo, DiasSemana dia, DateTime data, FlStatus status, Contato contato)
+        {
+            Id = id;
+            Titulo = titulo;
+            Contato = contato;
             Dia = dia;
             Data = data;
             Status = status;

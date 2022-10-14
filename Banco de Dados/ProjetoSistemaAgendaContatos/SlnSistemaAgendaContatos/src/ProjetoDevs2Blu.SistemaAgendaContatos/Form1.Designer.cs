@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gpCadastroContato = new System.Windows.Forms.GroupBox();
             this.cboUF = new System.Windows.Forms.ComboBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
@@ -53,24 +54,26 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gpCadastroCompromisso = new System.Windows.Forms.GroupBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.cboDiaSemana = new System.Windows.Forms.ComboBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.dtpDataCompromisso = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvContatos = new System.Windows.Forms.DataGridView();
-            this.dtvCompromissos = new System.Windows.Forms.DataGridView();
+            this.dgvCompromissos = new System.Windows.Forms.DataGridView();
+            this.btnClean = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnInfo = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.btnInfo = new System.Windows.Forms.Button();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.cboDiaSemana = new System.Windows.Forms.ComboBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.gpCadastroContato.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.gpCadastroCompromisso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvCompromissos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompromissos)).BeginInit();
             this.SuspendLayout();
             // 
             // gpCadastroContato
@@ -108,42 +111,42 @@
             this.cboUF.Location = new System.Drawing.Point(388, 144);
             this.cboUF.Name = "cboUF";
             this.cboUF.Size = new System.Drawing.Size(56, 21);
-            this.cboUF.TabIndex = 17;
+            this.cboUF.TabIndex = 9;
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(61, 143);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(221, 20);
-            this.txtCidade.TabIndex = 16;
+            this.txtCidade.TabIndex = 8;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(61, 113);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(117, 20);
-            this.txtBairro.TabIndex = 15;
+            this.txtBairro.TabIndex = 7;
             // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(252, 86);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(30, 20);
-            this.txtNumero.TabIndex = 14;
+            this.txtNumero.TabIndex = 6;
             // 
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(61, 84);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(154, 20);
-            this.txtRua.TabIndex = 13;
+            this.txtRua.TabIndex = 5;
             // 
             // txtRedeSocial
             // 
             this.txtRedeSocial.Location = new System.Drawing.Point(307, 54);
             this.txtRedeSocial.Name = "txtRedeSocial";
             this.txtRedeSocial.Size = new System.Drawing.Size(139, 20);
-            this.txtRedeSocial.TabIndex = 12;
+            this.txtRedeSocial.TabIndex = 4;
             // 
             // mskTelefone
             // 
@@ -151,21 +154,21 @@
             this.mskTelefone.Mask = "(00) 00000-0000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(90, 20);
-            this.mskTelefone.TabIndex = 11;
+            this.mskTelefone.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(61, 54);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(154, 20);
-            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(61, 25);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(221, 20);
-            this.txtNome.TabIndex = 9;
+            this.txtNome.TabIndex = 1;
             // 
             // label12
             // 
@@ -323,12 +326,35 @@
             this.gpCadastroCompromisso.TabStop = false;
             this.gpCadastroCompromisso.Text = "Cadastro de Compromisso";
             // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(268, 29);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(54, 20);
+            this.txtStatus.TabIndex = 11;
+            // 
+            // cboDiaSemana
+            // 
+            this.cboDiaSemana.FormattingEnabled = true;
+            this.cboDiaSemana.Location = new System.Drawing.Point(120, 56);
+            this.cboDiaSemana.Name = "cboDiaSemana";
+            this.cboDiaSemana.Size = new System.Drawing.Size(95, 21);
+            this.cboDiaSemana.TabIndex = 12;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(63, 28);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(152, 20);
+            this.txtTitulo.TabIndex = 10;
+            // 
             // dtpDataCompromisso
             // 
-            this.dtpDataCompromisso.Location = new System.Drawing.Point(268, 57);
+            this.dtpDataCompromisso.Location = new System.Drawing.Point(268, 58);
             this.dtpDataCompromisso.Name = "dtpDataCompromisso";
             this.dtpDataCompromisso.Size = new System.Drawing.Size(89, 20);
-            this.dtpDataCompromisso.TabIndex = 10;
+            this.dtpDataCompromisso.TabIndex = 13;
             // 
             // label13
             // 
@@ -384,17 +410,57 @@
             this.dgvContatos.ReadOnly = true;
             this.dgvContatos.Size = new System.Drawing.Size(456, 209);
             this.dgvContatos.TabIndex = 2;
+            this.dgvContatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContatos_CellDoubleClick);
             // 
-            // dtvCompromissos
+            // dgvCompromissos
             // 
-            this.dtvCompromissos.AllowUserToAddRows = false;
-            this.dtvCompromissos.AllowUserToOrderColumns = true;
-            this.dtvCompromissos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvCompromissos.Location = new System.Drawing.Point(474, 226);
-            this.dtvCompromissos.Name = "dtvCompromissos";
-            this.dtvCompromissos.ReadOnly = true;
-            this.dtvCompromissos.Size = new System.Drawing.Size(368, 209);
-            this.dtvCompromissos.TabIndex = 5;
+            this.dgvCompromissos.AllowUserToAddRows = false;
+            this.dgvCompromissos.AllowUserToOrderColumns = true;
+            this.dgvCompromissos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompromissos.Location = new System.Drawing.Point(474, 226);
+            this.dgvCompromissos.Name = "dgvCompromissos";
+            this.dgvCompromissos.ReadOnly = true;
+            this.dgvCompromissos.Size = new System.Drawing.Size(368, 209);
+            this.dgvCompromissos.TabIndex = 5;
+            // 
+            // btnClean
+            // 
+            this.btnClean.BackgroundImage = global::ProjetoDevs2Blu.SistemaAgendaContatos.Properties.Resources.clear;
+            this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClean.FlatAppearance.BorderSize = 0;
+            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClean.Location = new System.Drawing.Point(639, 143);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(62, 62);
+            this.btnClean.TabIndex = 16;
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackgroundImage = global::ProjetoDevs2Blu.SistemaAgendaContatos.Properties.Resources.Delete;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Location = new System.Drawing.Point(713, 143);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(51, 62);
+            this.btnDelete.TabIndex = 17;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.BackgroundImage = global::ProjetoDevs2Blu.SistemaAgendaContatos.Properties.Resources.Info2;
+            this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInfo.FlatAppearance.BorderSize = 0;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.Location = new System.Drawing.Point(772, 143);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(67, 61);
+            this.btnInfo.TabIndex = 18;
+            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnUpdate
             // 
@@ -402,11 +468,12 @@
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(565, 143);
+            this.btnUpdate.Location = new System.Drawing.Point(562, 143);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(62, 62);
-            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.TabIndex = 15;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
@@ -417,59 +484,30 @@
             this.btnInsert.Location = new System.Drawing.Point(484, 142);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(62, 62);
-            this.btnInsert.TabIndex = 3;
+            this.btnInsert.TabIndex = 14;
             this.btnInsert.UseVisualStyleBackColor = true;
-            // 
-            // btnInfo
-            // 
-            this.btnInfo.BackgroundImage = global::ProjetoDevs2Blu.SistemaAgendaContatos.Properties.Resources.Info2;
-            this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInfo.FlatAppearance.BorderSize = 0;
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.Location = new System.Drawing.Point(742, 143);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(89, 61);
-            this.btnInfo.TabIndex = 7;
-            this.btnInfo.UseVisualStyleBackColor = true;
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(63, 28);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(152, 20);
-            this.txtTitulo.TabIndex = 18;
-            // 
-            // cboDiaSemana
-            // 
-            this.cboDiaSemana.FormattingEnabled = true;
-            this.cboDiaSemana.Location = new System.Drawing.Point(120, 54);
-            this.cboDiaSemana.Name = "cboDiaSemana";
-            this.cboDiaSemana.Size = new System.Drawing.Size(95, 21);
-            this.cboDiaSemana.TabIndex = 18;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(268, 29);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(54, 20);
-            this.txtStatus.TabIndex = 19;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 450);
+            this.Controls.Add(this.btnClean);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.dtvCompromissos);
+            this.Controls.Add(this.dgvCompromissos);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.dgvContatos);
             this.Controls.Add(this.gpCadastroCompromisso);
             this.Controls.Add(this.gpCadastroContato);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Sistema de Agenda";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.gpCadastroContato.ResumeLayout(false);
             this.gpCadastroContato.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -477,7 +515,7 @@
             this.gpCadastroCompromisso.ResumeLayout(false);
             this.gpCadastroCompromisso.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvCompromissos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompromissos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,12 +555,14 @@
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.ComboBox cboUF;
-        private System.Windows.Forms.DataGridView dtvCompromissos;
+        private System.Windows.Forms.DataGridView dgvCompromissos;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.ComboBox cboDiaSemana;
         private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnClean;
     }
 }
 

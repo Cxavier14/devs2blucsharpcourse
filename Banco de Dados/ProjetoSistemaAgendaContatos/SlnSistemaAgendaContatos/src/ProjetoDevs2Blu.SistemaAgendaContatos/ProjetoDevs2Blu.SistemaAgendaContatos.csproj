@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContatoRepository.cs" />
+    <Compile Include="Data\CompromissoRepository.cs" />
+    <Compile Include="Data\ContatoRepository.cs" />
     <Compile Include="Data\ConnectionMySql.cs" />
+    <Compile Include="Data\EstadoRepository.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +105,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\Info2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\delete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\clear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
