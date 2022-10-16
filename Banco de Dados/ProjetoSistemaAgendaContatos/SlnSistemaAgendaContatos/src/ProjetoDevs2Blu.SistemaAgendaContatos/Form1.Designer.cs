@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gpCadastroContato = new System.Windows.Forms.GroupBox();
             this.cboUF = new System.Windows.Forms.ComboBox();
@@ -69,6 +70,7 @@
             this.btnInfo = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gpCadastroContato.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.gpCadastroCompromisso.SuspendLayout();
@@ -321,7 +323,7 @@
             this.gpCadastroCompromisso.ForeColor = System.Drawing.SystemColors.Control;
             this.gpCadastroCompromisso.Location = new System.Drawing.Point(474, 27);
             this.gpCadastroCompromisso.Name = "gpCadastroCompromisso";
-            this.gpCadastroCompromisso.Size = new System.Drawing.Size(367, 99);
+            this.gpCadastroCompromisso.Size = new System.Drawing.Size(367, 106);
             this.gpCadastroCompromisso.TabIndex = 1;
             this.gpCadastroCompromisso.TabStop = false;
             this.gpCadastroCompromisso.Text = "Cadastro de Compromisso";
@@ -337,7 +339,7 @@
             // cboDiaSemana
             // 
             this.cboDiaSemana.FormattingEnabled = true;
-            this.cboDiaSemana.Location = new System.Drawing.Point(120, 56);
+            this.cboDiaSemana.Location = new System.Drawing.Point(120, 63);
             this.cboDiaSemana.Name = "cboDiaSemana";
             this.cboDiaSemana.Size = new System.Drawing.Size(95, 21);
             this.cboDiaSemana.TabIndex = 12;
@@ -351,7 +353,7 @@
             // 
             // dtpDataCompromisso
             // 
-            this.dtpDataCompromisso.Location = new System.Drawing.Point(268, 58);
+            this.dtpDataCompromisso.Location = new System.Drawing.Point(268, 65);
             this.dtpDataCompromisso.Name = "dtpDataCompromisso";
             this.dtpDataCompromisso.Size = new System.Drawing.Size(89, 20);
             this.dtpDataCompromisso.TabIndex = 13;
@@ -372,7 +374,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(225, 58);
+            this.label11.Location = new System.Drawing.Point(225, 65);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 18);
             this.label11.TabIndex = 7;
@@ -383,7 +385,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(14, 58);
+            this.label10.Location = new System.Drawing.Point(14, 65);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 18);
             this.label10.TabIndex = 6;
@@ -429,12 +431,13 @@
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.FlatAppearance.BorderSize = 0;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClean.Location = new System.Drawing.Point(639, 143);
+            this.btnClean.Location = new System.Drawing.Point(644, 154);
             this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(62, 62);
+            this.btnClean.Size = new System.Drawing.Size(56, 50);
             this.btnClean.TabIndex = 16;
             this.btnClean.UseVisualStyleBackColor = true;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            this.btnClean.MouseHover += new System.EventHandler(this.btnClean_MouseHover);
             // 
             // btnDelete
             // 
@@ -442,12 +445,13 @@
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(713, 143);
+            this.btnDelete.Location = new System.Drawing.Point(718, 154);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(51, 62);
+            this.btnDelete.Size = new System.Drawing.Size(45, 50);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.MouseHover += new System.EventHandler(this.btnDelete_MouseHover);
             // 
             // btnInfo
             // 
@@ -455,12 +459,13 @@
             this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInfo.FlatAppearance.BorderSize = 0;
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.Location = new System.Drawing.Point(772, 143);
+            this.btnInfo.Location = new System.Drawing.Point(783, 154);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(67, 61);
+            this.btnInfo.Size = new System.Drawing.Size(56, 49);
             this.btnInfo.TabIndex = 18;
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            this.btnInfo.MouseHover += new System.EventHandler(this.btnInfo_MouseHover);
             // 
             // btnUpdate
             // 
@@ -468,12 +473,13 @@
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(562, 143);
+            this.btnUpdate.Location = new System.Drawing.Point(564, 154);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(62, 62);
+            this.btnUpdate.Size = new System.Drawing.Size(56, 50);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
             // 
             // btnInsert
             // 
@@ -481,12 +487,15 @@
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Location = new System.Drawing.Point(484, 142);
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnInsert.Location = new System.Drawing.Point(480, 153);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(62, 62);
+            this.btnInsert.Size = new System.Drawing.Size(56, 50);
             this.btnInsert.TabIndex = 14;
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
             // 
             // Form1
             // 
@@ -563,6 +572,7 @@
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

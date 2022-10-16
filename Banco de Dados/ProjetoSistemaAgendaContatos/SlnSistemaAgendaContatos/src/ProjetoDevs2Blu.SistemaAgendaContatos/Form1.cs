@@ -83,6 +83,7 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos
             txtNumero.Clear();
             txtBairro.Clear();
             txtCidade.Clear();
+            cboUF.Text = "";
         }
         private void PreencheCamposContatos()
         {
@@ -91,8 +92,6 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos
         #endregion
 
         #region Events
-
-
 
         private void Form1_Activated(object sender, EventArgs e)
         {
@@ -154,9 +153,8 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos
         {
             int idContato = (int)dgvContatos.Rows[e.RowIndex].Cells["id"].Value;
             MySqlDataReader contatoReader = ContatoRepository.GetContatoById(idContato);
-            MySqlDataReader ufReader = EstadoRepository.GetUfById(idContato);
-
-            while (contatoReader.Read() || ufReader.Read())
+            
+            while (contatoReader.Read())
             {
                 txtNome.Text = contatoReader.GetString("nome");
                 mskTelefone.Text = contatoReader.GetString("telefone");
@@ -166,12 +164,34 @@ namespace ProjetoDevs2Blu.SistemaAgendaContatos
                 txtNumero.Text = contatoReader.GetInt32("numero").ToString();
                 txtBairro.Text = contatoReader.GetString("Bairro");
                 txtCidade.Text = contatoReader.GetString("cidade");
-                
+                cboUF.Text = dgvContatos.CurrentRow.Cells[9].Value.ToString();
             }
         }
 
+        private void btnInsert_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Adiocionar Contato", btnInsert);
+        }
+
+        private void btnUpdate_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Editar Contato", btnUpdate);
+        }
+
+        private void btnClean_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Limpar Formulário", btnClean);
+        }
+
+        private void btnDelete_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Excluir Contato", btnDelete);
+        }
+
+        private void btnInfo_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Informações", btnInfo);
+        }
         #endregion
-
-
     }
 }
