@@ -162,10 +162,7 @@ namespace Devs2Blu.ProjetosAula.SistemaCadastro.Forms
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-        }
-        
-        #endregion
-                        
+        }                       
        
         private void Form1_Activated(object sender, EventArgs e)
         {
@@ -193,5 +190,6 @@ namespace Devs2Blu.ProjetosAula.SistemaCadastro.Forms
                 cboUF.Text = reader.GetString("Estado");
             }            
         }
+        #endregion
     }
 }
