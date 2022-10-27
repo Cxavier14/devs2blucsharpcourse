@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&family=Special+Elite&display=swap');
+/* font-family: 'Special Elite', cursive; */
+* {
+    margin: 0px;    
+    font-family: 'Roboto', sans-serif;      
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #d8d4d4;
+}
+
+/* Header */
+header#topo {
+    /* border: 1px solid #111; */
+    width: 100vw;
+    padding: 0.5em;
+    background: linear-gradient(45deg, #fff 30%, #111);
+}
+
+#topo-logo {
+    display: flex;
+    margin-left: 1em;
+}
+
+#topo-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+#topo-logo figcaption h1 {
+    margin-left: 1em;
+    margin-top: 0.2em;
+    font-family: 'Special Elite', cursive;
+}
+
+/* Destaque */
+#destaque .conteudo-destaque {
+    display: block;
+    width: 80vw;
+    padding-left: 80px;
+    padding-top: 20px;    
+}
+
+#destaque .conteudo-destaque figure {
+    border: 1px solid #111;  
+    background-color: #fff;  
+    text-align: center;
+    padding-bottom: 8px;
+    border-radius: 16px 6px 10px 4px;
+    box-shadow: 2px 2px 4px;
+}
+
+.conteudo-destaque figure img {
+    width: 100px;
+}
+
+#destaque .conteudo-destaque figure figcaption h3 {
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Main */
+main .conteudo-principal {
+    /* border: 1px solid #111;     */
+    width: 80vw;    
+    margin: 30px;    
+    padding: 10px;
+    margin-left: 6%; 
+}
+
+main .conteudo-principal .primeiro-p {
+    font-weight: 600;
+    padding-bottom: 2px;
+    font-style: italic;    
+}
+
+main .conteudo-principal p {
+    padding-top: 1em;
+}
+
+#imagem-central  img {
+    display: block;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+/* Lista comparação */
+.list {
+    /* border: 1px solid #111; */
+    width: 40%;
+    display: block;
+    margin-left: 5%;
+    float: left;
+}
+
+.lista-container h3 {
+    text-align: center;
+    font-weight: 800;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.lista-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-container .list ul h4 {
+    font-weight: 600;
+}
+
+.lista-container::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.list #list-webb {
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+.list #list-hubble {
+    padding-bottom: 20px;
+}
