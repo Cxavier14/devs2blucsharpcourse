@@ -65,7 +65,6 @@ header#topo {
 
 /* Main */
 main .conteudo-principal {
-    /* border: 1px solid #111;     */
     width: 80vw;    
     margin: 30px;    
     padding: 10px;
@@ -92,7 +91,6 @@ main .conteudo-principal p {
 
 /* Lista comparação */
 .list {
-    /* border: 1px solid #111; */
     width: 40%;
     display: block;
     margin-left: 5%;
