@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+header {
+    display: block;
+    width: 100vw;
+    position: relative;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: linear-gradient(#888, #ccc, #fff) no-repeat;
+}
+
+#estrelas {
+    height: 60vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+#estrelas-img {
+    width: 100vw;
+    position: absolute;
+    animation: estrela-animation 60s ease-in-out infinite;
+    opacity: 1;
+}
+
+#card-estrela {
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
+}
+
+
+
+@keyframes estrela-animation {
+    0% {
+        transform: scaleX(1);
+    }
+    25% {
+        transform: scaleX(1.2);
+    }
+    50% {
+        transform: scaleX(1.3);
+    }
+    75% {
+        transform: scaleX(1.2);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
