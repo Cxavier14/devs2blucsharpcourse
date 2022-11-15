@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+}
+
+body {
+    background: gray;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgb(227, 82, 210);
+}
