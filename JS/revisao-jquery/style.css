@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.bg-pkm-theme1 {
+    background: linear-gradient(#ff0000, #b10000);
+}
