@@ -1,9 +1,9 @@
-﻿using Devs2Blu.ProjetosAula.PrimeiroProjetoMVC.Models;
+﻿using Devs2Blu.Exercicio01MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Devs2Blu.ProjetosAula.PrimeiroProjetoMVC.Controllers
-{    
+namespace Devs2Blu.Exercicio01MVC.Controllers
+{
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -12,7 +12,7 @@ namespace Devs2Blu.ProjetosAula.PrimeiroProjetoMVC.Controllers
         {
             _logger = logger;
         }
-                
+
         public IActionResult Index()
         {
             return View();
@@ -23,10 +23,9 @@ namespace Devs2Blu.ProjetosAula.PrimeiroProjetoMVC.Controllers
             return View();
         }
 
-        [Route("home/cadastro")]
-        [Route("cadastro")]
-        [Route("cadastre-se")]
-        public IActionResult Cadastro()
+        [Route("home/contato")]
+        [Route("contato")]
+        public IActionResult Contato()
         {
             return View();
         }
