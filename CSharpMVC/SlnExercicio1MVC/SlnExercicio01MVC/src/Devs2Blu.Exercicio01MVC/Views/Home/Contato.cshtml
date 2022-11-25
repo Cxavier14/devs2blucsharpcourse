@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Contato";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form>
+    <fieldset>
+        <legend>Entre em contato conosco</legend>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Comments</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </fieldset>
+</form>
