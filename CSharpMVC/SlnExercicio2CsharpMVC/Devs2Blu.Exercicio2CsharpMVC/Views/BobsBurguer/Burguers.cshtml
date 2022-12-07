@@ -1,0 +1,36 @@
+﻿@model List<Burguer>
+
+@{
+    ViewData["Title"] = "Burguers";
+    Random rd = new Random();
+    string img = $"../img/hamburguer-cartoon_{rd.Next(1, 5)}.jpeg";
+}
+
+<div class="text-center">
+    <h1 id="texto-home" class="display-4 titulo">@ViewData["Title"]</h1>
+</div>
+
+<div id="oferta-do-dia"></div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+    @foreach (var item in Model)
+    {
+        <div class="card box-shadow me-2" style="width: 18rem;">
+            <img class="card-img-top" src="@img" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@item.name</h5>
+                <p class="card-text text-end">@item.price</p>
+            </div>
+        </div>
+    }
+</div>
+
+@section scripts
+    {
+    <script>
+        $(document).ready(() => {
+            getView(bobsburguer, burguerdodia, #oferta-do-dia, null);
+
+        });
+    </script>
+}
