@@ -1,10 +1,10 @@
 ﻿@model List<BobsBurguer>
 
-<div class="text-center">
-    <h1 id="texto-home" class="display-4 titulo">Bobs Burguers - Personagens</h1>
-</div>
+@{
+    ViewData[("Title")] = "Busca";
+}
 
-<div id="content-list" class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+<div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
     @foreach (var item in Model)
     {
         <div class="card mb-3 me-2 justify-content-start" style="max-width: 540px;">

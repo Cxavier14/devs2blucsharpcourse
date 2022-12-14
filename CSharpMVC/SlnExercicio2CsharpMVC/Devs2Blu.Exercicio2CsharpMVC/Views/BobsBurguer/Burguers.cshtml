@@ -10,12 +10,14 @@
     <h1 id="texto-home" class="display-4 titulo">@ViewData["Title"]</h1>
 </div>
 
-<div id="oferta-do-dia"></div>
+<div class="d-flex mt-2 mb-2 justify-content-center">
+    <div id="oferta-do-dia" class="justify-content-center"></div>
+</div>
 
 <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
     @foreach (var item in Model)
     {
-        <div class="card box-shadow me-2" style="width: 18rem;">
+        <div class="card box-shadow me-2" style="width: 15rem;">
             <img class="card-img-top" src="@img" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">@item.name</h5>
@@ -24,13 +26,11 @@
         </div>
     }
 </div>
-
 @section scripts
     {
     <script>
         $(document).ready(() => {
-            getView(bobsburguer, burguerdodia, #oferta-do-dia, null);
-
+            getView('personagens', 'burguerdodia', '#oferta-do-dia');
         });
     </script>
 }

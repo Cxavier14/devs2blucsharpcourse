@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Devs2Blu.Exercicio2CsharpMVC.Controllers
 {
     [Route("personagens")]
-    public class BobsBurguer : Controller
+    public class BobsBurguerController : Controller
     {
         private readonly ServiceApi _serviceApi;
 
-        public BobsBurguer()
+        public BobsBurguerController()
         {
             _serviceApi = new ServiceApi();
         }
@@ -28,10 +28,17 @@ namespace Devs2Blu.Exercicio2CsharpMVC.Controllers
         }
 
         [Route("burguerdodia")]
-        public async Task<List<Burguer>> BurguerdoDia()
+        public async Task<PartialViewResult> BurguerdoDia()
         {
             var burguer = await _serviceApi.GetBurguerOfTheDay();
-            return burguer;
+            return PartialView(burguer);
+        }
+
+        [Route("search/{name}")]
+        public async Task<IActionResult> SearchCharacter(string name)
+        {
+            var character = await _serviceApi.GetCharacterByName(name);
+            return PartialView(character);
         }
     }
 }

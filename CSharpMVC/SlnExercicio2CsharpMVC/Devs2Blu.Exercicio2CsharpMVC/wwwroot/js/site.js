@@ -1,7 +1,6 @@
-﻿const getView = (controller, viewName, target, params = null) => {
+﻿const getView = (controller, viewName, target) => {
     let url = `/${controller}/${viewName}`;
-    url += (params) ? `${params}` : '';
-    console.log(url);
+
     let ajaxConfig = {
         url: url,
         dataType: 'html',
@@ -12,3 +11,24 @@
     $.ajax(ajaxConfig);
 }
 
+$(document).ready(() => {
+    $('#btn-search').click((e) => {
+        e.preventDefault();
+        let nameInput = $('#input-search').val();
+        $.ajax({
+            url: `personagens/search/${nameInput}`,
+            dataType: 'html',
+            success: (htmlPartialView) => {
+                $('#content-list').html(htmlPartialView);
+                $('#input-search').val('');
+            }
+        });
+    });
+});
+
+const randomNumberImg = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    rand = Math.floor(Math.random() * (max - min) + min);
+    return `src="../img/hamburguer-cartoon_${rand}.jpeg"`;
+}

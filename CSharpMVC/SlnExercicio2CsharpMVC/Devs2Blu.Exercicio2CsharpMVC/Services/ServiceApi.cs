@@ -23,17 +23,18 @@ namespace Devs2Blu.Exercicio2CsharpMVC.Services
             return response;
         }
 
-        public async Task<List<Burguer>> GetBurguerOfTheDay()
+        public async Task<Burguer> GetBurguerOfTheDay()
         {
-            Random rd = new Random();
-            var response = await GetList<Burguer>($"{URL_BURGUERS}/{rd.Next(1,333)}");
+            Random rd = new();
+            string url = $"{URL_BURGUERS}/{rd.Next(1, 333)}";
+            var response = await Get<Burguer>(url);
             return response;
         }
 
-        public async Task<BobsBurguer> GetCharacterByName(string nome)
+        public async Task<List<BobsBurguer>> GetCharacterByName(string nome)
         {
-            var urlScr = $"{URL_BOBS_BURGUER}?={nome}";
-            var response = await Get<BobsBurguer>(urlScr);
+            var urlScr = $"{URL_BOBS_BURGUER}?name={nome}";
+            var response = await GetList<BobsBurguer>(urlScr);
             return response;
         }
 
