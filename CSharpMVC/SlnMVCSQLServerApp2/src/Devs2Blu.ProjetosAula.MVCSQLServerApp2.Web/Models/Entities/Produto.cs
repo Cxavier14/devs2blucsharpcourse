@@ -16,6 +16,7 @@ namespace Devs2Blu.ProjetosAula.MVCSQLServerApp2.Web.Models.Entities
 
         [Column("preco")]
         [Display(Name = "Preco")]
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public Double Preco { get; set; }
 
         [Column("quantidade")]
