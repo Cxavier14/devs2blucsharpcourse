@@ -26,9 +26,3 @@ $(document).ready(() => {
     });
 });
 
-const randomNumberImg = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    rand = Math.floor(Math.random() * (max - min) + min);
-    return `src="../img/hamburguer-cartoon_${rand}.jpeg"`;
-}
