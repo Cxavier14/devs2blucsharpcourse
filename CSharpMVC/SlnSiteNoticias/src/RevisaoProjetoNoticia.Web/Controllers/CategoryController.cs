@@ -19,8 +19,7 @@ namespace RevisaoProjetoNoticia.Web.Controllers
         {
             // to list all categories
             // get of CategoryRepository through Dependency Injection (ICategoryService)
-            var categoryList = _service.FindAll();
-            return View(await categoryList.ToListAsync());
+            return View(_service.FindAll());
         }
 
         public IActionResult Add()
