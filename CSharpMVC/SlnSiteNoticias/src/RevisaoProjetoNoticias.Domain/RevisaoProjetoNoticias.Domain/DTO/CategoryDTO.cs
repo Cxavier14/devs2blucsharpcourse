@@ -1,15 +1,18 @@
 ﻿using RevisaoProjetoNoticias.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace RevisaoProjetoNoticias.Domain.DTO
 {
     public class CategoryDTO
     {
         public int id { get; set; }
+        [Display(Name = "Category")]
         public string name { get; set; }
         public virtual ICollection<NewsDTO>? newsList { get; set; }
 
@@ -28,20 +31,20 @@ namespace RevisaoProjetoNoticias.Domain.DTO
             {
                 id = category.Id,
                 name = category.Name,
-                newsList = category.NewsList.Select(c => new NewsDTO() 
-                {
-                    id = c.Id,
-                    title = c.Title,
-                    description = c.Description,
-                    createdOn = c.CreatedOn,
-                    published = c.Published,
-                    categoryId = c.CategoryId,
-                    category = new CategoryDTO()
-                    {
-                        id = c.Category.Id,
-                        name = c.Category.Name
-                    }
-                }).ToList()
+                //newsList = category.NewsList.Select(c => new NewsDTO() 
+                //{
+                //    id = c.Id,
+                //    title = c.Title,
+                //    description = c.Description,
+                //    createdOn = c.CreatedOn,
+                //    published = c.Published,
+                //    categoryId = c.CategoryId,
+                //    category = new CategoryDTO()
+                //    {
+                //        id = c.Category.Id,
+                //        name = c.Category.Name
+                //    }
+                //}).ToList()
             };
         }
     }
