@@ -1,0 +1,54 @@
+﻿@model List<Burguer>
+
+@{
+    ViewData["Title"] = "Burguers";
+    Random rd = new Random();
+    string getImg(int ini, int fim)
+    {
+        return $"../img/hamburguer{rd.Next(ini, fim)}cartoon.jpeg";
+    }
+}
+
+<div class="text-center">
+    <h1 id="texto-home" class="display-4 titulo">@ViewData["Title"]</h1>
+</div>
+
+<div class="d-flex mt-2 mb-2 justify-content-center">
+    <div id="oferta-do-dia" class="justify-content-center"></div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+    @foreach (var item in Model)
+    {
+        <div id="card-burguer" class="card box-shadow me-2" style="max-width: 15rem;">
+            <img class="card-img-top" src="@getImg(1,5)" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@item.name</h5>
+                <p class="card-text text-end">@item.price</p>
+            </div>
+        </div>
+    }
+</div>
+@section scripts
+    {
+    <script>
+        $(document).ready(() => {
+            getView('personagens', 'burguerdodia', '#oferta-do-dia');
+            //inputImg();
+        });
+
+        /*const inputImg = () => {
+            let imgCard = document.createElement('img');
+            $(imgCard).addClass('card-img-top');
+            $(imgCard).attr('src', randomNumberImg(1, 5));
+            $('#card-burguer').append(imgCard);
+        }
+
+        const randomNumberImg = (min, max) => {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            rand = Math.floor(Math.random() * (max - min) + min);
+            return `../img/hamburguer${rand}cartoon.jpeg`;
+        }*/
+    </script>
+}

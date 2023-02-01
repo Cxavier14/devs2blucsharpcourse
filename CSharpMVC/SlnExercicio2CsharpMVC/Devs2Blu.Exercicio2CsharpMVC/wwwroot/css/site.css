@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: rgb(102,187,17);
+    background: linear-gradient(180deg, rgba(102,187,17,0.6502976190476191) 15%, rgba(8,57,8,0.8127626050420168) 100%);
+}
+
+#img-home {
+    width: 40em;
+    transition: transform .5s ease;
+    overflow: hidden;
+    border: solid 1px #fff;
+    border-radius: 2px 3px 4px 5px;
+    box-shadow: 2px 2px 2px 3px greenyellow;
+    margin: 1em;
+    margin-bottom: 2em;
+}
+
+#img-home:hover {
+    transform: scale(1.2);
+}
+
+#footer-contato {
+    text-decoration:none;
+    color: #111;
+}
+
+.titulo {
+    font-weight: 400;
+    color: #111;
+    text-shadow: 2px 2px 4px #808080;
+}
+
+#texto-home {
+    font-family: 'Anton', sans-serif;
+    color: red;
+    text-shadow:
+       -1px -2px 0px #111,
+       -1px 2px 0px #111,
+       1px -2px 0px #111,
+       1px 1px 0px #111;
+}
+
+#text-pedido {
+    font-weight: 400;
+    font-size:2em;
+    color: #111;
+    text-shadow: 2px 2px 4px #808080;
+}
+
+.informacoes {
+    border: solid 1px #fff;
+    border-radius: 2px 3px 4px 5px;
+    box-shadow: 2px 2px 2px 3px greenyellow;
+    padding: 1em;
+    width:40em;
+    margin-top: 1em;
+    margin-bottom:5em;
+    color: #fff;
+    text-align: justify;
+    font-size: 1.2em;
+    font-weight: 400;
+}

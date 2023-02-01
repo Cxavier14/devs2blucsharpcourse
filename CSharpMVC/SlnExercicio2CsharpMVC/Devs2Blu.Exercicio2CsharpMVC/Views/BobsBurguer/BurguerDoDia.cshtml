@@ -1,0 +1,15 @@
+﻿@model Burguer
+
+@{
+    Random rd = new();
+    string img = $"../img/hamburguer{rd.Next(1, 5)}cartoon.jpeg";
+}
+
+<h3 id="text-pedido">Sugestão do momento</h3>
+<div class="card box-shadow justify-content-center m-auto" style="width: 13rem;">
+    <img class="card-img-top" src="@img" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.name</h5>
+        <p class="card-text text-end">@Model.price</p>
+    </div>
+</div>

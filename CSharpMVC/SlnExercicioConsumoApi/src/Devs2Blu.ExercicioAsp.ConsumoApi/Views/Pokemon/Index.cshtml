@@ -1,0 +1,22 @@
+﻿@model Pokemon
+@{
+    ViewData["Title"] = "Pokemóns";
+}
+
+<div id="welcome-text">
+    <div class="text-center">
+        <h1 id="welcome-text" class="display-4">Bem Vindo ao universo Pokémon</h1>
+    </div>
+    <div class="row justify-content-center">
+        @foreach (var item in Model.results)
+        {
+            <div class="card bg-dark mb-3 ms-1 me-1" style="max-width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body text-white">
+                    <h5 class="card-title">@item.name</h5>
+                    <p class="card-text">@item.url</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

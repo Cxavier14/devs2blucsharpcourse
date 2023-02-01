@@ -1,0 +1,25 @@
+﻿@model List<BobsBurguer>
+
+<div class="text-center">
+    <h1 id="texto-home" class="display-4 titulo">Bobs Burguers - Personagens</h1>
+</div>
+
+<div id="content-list" class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+    @foreach (var item in Model)
+    {
+        <div class="card mb-3 me-2 justify-content-start" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="@item.image" class="img-fluid rounded-start" alt="@item.name">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.name</h5>
+                        <p class="card-text">Ocupação: @item.occupation</p>
+                        <a href="@item.wikiUrl" target="_blank">Mais sobre o personagem</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
