@@ -1,0 +1,20 @@
+﻿@model RevisaoProjetoNoticias.Domain.DTO.NewsDTO
+
+<div class="text-center title-page">
+    <h1 class="display-1"><strong>Delete</strong></h1>
+    <p class="display-6"></p>
+</div>
+
+<form asp-action="Delete">
+    <div class="container-excluir">
+        <div class="row justify-content-center">
+            <p class="display-6 text-center color-label">
+                Are you sure you want to delete @Model.title?
+            </p>
+
+            <input type="hidden" asp-for="id" />
+            <input type="submit" value="Delete" class="btn btn-danger col-1" />
+            <a asp-action="Index" class="btn btn-warning col-1 ms-2" value="Cancel"></a>
+        </div>
+    </div>
+</form>

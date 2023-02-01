@@ -13,6 +13,7 @@ $('#intro-conteudo').click((e)=>{
 })
 
 $('#intro-about').click((e)=>{
+    e.preventDefault();
     $.ajax({
         url: "about.html",
         context: document.body,

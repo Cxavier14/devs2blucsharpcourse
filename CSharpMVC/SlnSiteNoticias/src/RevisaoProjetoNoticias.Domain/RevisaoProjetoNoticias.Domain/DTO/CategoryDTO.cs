@@ -30,21 +30,7 @@ namespace RevisaoProjetoNoticias.Domain.DTO
             return new CategoryDTO
             {
                 id = category.Id,
-                name = category.Name,
-                //newsList = category.NewsList.Select(c => new NewsDTO() 
-                //{
-                //    id = c.Id,
-                //    title = c.Title,
-                //    description = c.Description,
-                //    createdOn = c.CreatedOn,
-                //    published = c.Published,
-                //    categoryId = c.CategoryId,
-                //    category = new CategoryDTO()
-                //    {
-                //        id = c.Category.Id,
-                //        name = c.Category.Name
-                //    }
-                //}).ToList()
+                name = category.Name,                
             };
         }
     }

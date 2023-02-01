@@ -65,5 +65,33 @@ namespace RevisaoProjetoNoticia.Web.Controllers
 
             return View(news);
         }
+
+        public async Task<ActionResult> Delete(int id)
+        {
+            var news = await _service.FindById(id);
+
+            if (news == null) return NotFound();
+
+            return View(news);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<int>> Delete([Bind("id, title, description, createdOn, published, categoryId")] NewsDTO news)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (await _service.Delete(news) > 0)
+                        return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

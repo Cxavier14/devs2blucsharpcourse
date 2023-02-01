@@ -19,9 +19,10 @@ namespace RevisaoProjetoNoticia.Application.Sevice.SQLServerServices
             _repository = repository;
         }
 
-        public Task<int> Delete(NewsDTO entity)
+        public async Task<int> Delete(int id)
         {
-            throw new NotImplementedException();
+            var entity = await _repository.FindById(id);
+            return await _repository.Delete(entity);
         }
 
         public List<NewsDTO> FindAll()
