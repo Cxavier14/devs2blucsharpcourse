@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HealthSystemManager.Domain.IServices
 {
-    public interface IPatientRepository : IBaseService<Patient>
+    public interface IPatientService : IBaseService<Patient>
     {
     }
 }
