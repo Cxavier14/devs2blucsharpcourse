@@ -7,24 +7,26 @@ using System.Threading.Tasks;
 
 namespace HealthSystemManager.Domain.DTO
 {
-    public class MedicalRecordsDTO
+    public class MedicalRecordDTO
     {
         public int id { get; set; }
+        public string diagnostic { get; set; }
         public DateTime medicalAppointment { get; set; }
-        public string[] medications { get; set; }
-        public string[] exams { get; set; }
+        public string medication { get; set; }
+        public string exam { get; set; }
 
         public int patientId { get; set; }
         public virtual Patient? Patient { get; set; }
 
-        public MedicalRecordsDTO mapToDTO(MedicalRecord medicalRecord)
+        public MedicalRecordDTO mapToDTO(MedicalRecord medicalRecord)
         {
-            return new MedicalRecordsDTO
+            return new MedicalRecordDTO
             {
                 id = medicalRecord.Id,
+                diagnostic = medicalRecord.Diagnostic,
                 medicalAppointment = medicalRecord.MedicalAppointment,
-                medications = medicalRecord.Medications,
-                exams = medicalRecord.Exams,
+                medication = medicalRecord.Medication,
+                exam = medicalRecord.Exam,
                 patientId = medicalRecord.PatientId
             };
         }
@@ -34,9 +36,10 @@ namespace HealthSystemManager.Domain.DTO
             return new MedicalRecord
             {
                 Id = id,
+                Diagnostic = diagnostic,
                 MedicalAppointment = medicalAppointment,
-                Medications = medications,
-                Exams = exams,
+                Medication = medication,
+                Exam = exam,
                 PatientId = patientId
             };
         }

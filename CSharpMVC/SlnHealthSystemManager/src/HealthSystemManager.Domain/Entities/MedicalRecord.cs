@@ -9,9 +9,10 @@ namespace HealthSystemManager.Domain.Entities
     public class MedicalRecord
     {
         public int Id { get; set; }
+        public string Diagnostic { get; set; }
         public DateTime MedicalAppointment { get; set; }
-        public string[] Medications { get; set; }
-        public string[] Exams { get; set; }
+        public string Medication { get; set; }
+        public string Exam { get; set; }
         
         public int PatientId { get; set; }
         public virtual Patient? Patient { get; set; }

@@ -12,7 +12,7 @@ namespace HealthSystemManager.Domain.DTO
         public int id { get; set; }
         public string name { get; set; }
         public string identityDocument { get; set; }
-        public DateOnly birthDate { get; set; }
+        public DateTime birthDate { get; set; }
         public string phone { get; set; }
         public string address { get; set; }
         public string city { get; set; }

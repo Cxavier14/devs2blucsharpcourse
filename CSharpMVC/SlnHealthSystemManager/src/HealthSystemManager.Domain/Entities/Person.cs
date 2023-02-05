@@ -11,7 +11,7 @@ namespace HealthSystemManager.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string IdentityDocument { get; set; }
-        public DateOnly BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

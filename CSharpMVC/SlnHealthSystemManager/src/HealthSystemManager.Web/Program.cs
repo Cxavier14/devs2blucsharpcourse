@@ -1,3 +1,4 @@
+using HealthSystemManager.Application.Service.SQLServerServices;
 using HealthSystemManager.Domain.IRepositories;
 using HealthSystemManager.Domain.IServices;
 using HealthSystemManager.Infra.Data.Context;
@@ -11,7 +12,7 @@ builder.Services.AddControllersWithViews();
 
 // Context SQL Server
 builder.Services.AddDbContext<SQLServerContext>
-    (options => options.UseSqlServer("Server=DESKTOP-267CQMF\\SQLEXPRESS;Database=HealthSystem;User Id=sa;Password=147258369;TrustServerCertificate=True;Encrypt=False;"));
+    (options => options.UseSqlServer("Server=DESKTOP-0OM0TD5\\SQLEXPRESS;Database=HealthSystem;User Id=sa;Password=147258369;TrustServerCertificate=True;"));
 
 // # Dependency Injections #
 // # Repositories #
@@ -20,10 +21,9 @@ builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 builder.Services.AddScoped<IMedicalRecordsRepository, MedicalRecordRepository>();
 
 // # Services #
-/*builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddScoped<IPatientService, PatientService>();
 builder.Services.AddScoped<IMedicalRecordsService, MedicalRecordService>();
-*/
 
 var app = builder.Build();
 

@@ -1,4 +1,4 @@
-﻿using HealthSystemManager.Domain.Entities;
+﻿using HealthSystemManager.Domain.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HealthSystemManager.Domain.IServices
 {
-    public interface IPersonService : IBaseService<Person>
+    public interface IPersonService : IBaseService<PersonDTO>
     {
     }
 }

@@ -28,10 +28,10 @@ namespace RevisaoProjetoNoticias.Application.Service.SQLServerServices
         {
             return _repository.FindAll()
                               .Select(c => new CategoryDTO()
-                                        {
-                                            id = c.Id,
-                                            name = c.Name
-                                        }).ToList();
+                              {
+                                  id = c.Id,
+                                  name = c.Name
+                              }).ToList();
         }
 
         public async Task<CategoryDTO> FindById(int id)
@@ -45,7 +45,8 @@ namespace RevisaoProjetoNoticias.Application.Service.SQLServerServices
             if (entity.id > 0)
             {
                 return _repository.Update(entity.mapToEntity());
-            } else
+            }
+            else
             {
                 return _repository.Save(entity.mapToEntity());
             }
