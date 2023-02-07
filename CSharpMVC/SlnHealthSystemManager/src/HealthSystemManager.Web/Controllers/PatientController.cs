@@ -6,7 +6,7 @@ namespace HealthSystemManager.Web.Controllers
 {
     public class PatientController : Controller
     {
-        private readonly IPatientService _patientService;
+        private readonly IPatientService _patientService;        
 
         public PatientController(IPatientService patientService)
         {
@@ -16,7 +16,8 @@ namespace HealthSystemManager.Web.Controllers
         // GET: PatientController
         public ActionResult Index()
         {
-            return View();
+            var result = _patientService.FindAll();
+            return View(result);
         }
 
         // GET: PatientController/Details/5

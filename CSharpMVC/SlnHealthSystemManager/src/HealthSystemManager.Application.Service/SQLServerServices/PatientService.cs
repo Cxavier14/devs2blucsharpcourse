@@ -30,9 +30,12 @@ namespace HealthSystemManager.Application.Service.SQLServerServices
                 .Select(patient => new PatientDTO
                 {
                     id = patient.Id,
-                    personId = patient.PersonId
+                    personId = patient.PersonId,
+                    person = patient.Person,
                 }).ToList();
         }
+
+
 
         public async Task<PatientDTO> FindById(int id)
         {
