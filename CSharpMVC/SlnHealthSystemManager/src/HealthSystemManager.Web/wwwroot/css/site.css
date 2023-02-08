@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.iconMenu {
+    width: 3.2em;
+    height: 3.2em;
+    margin-right:0.4em
+}

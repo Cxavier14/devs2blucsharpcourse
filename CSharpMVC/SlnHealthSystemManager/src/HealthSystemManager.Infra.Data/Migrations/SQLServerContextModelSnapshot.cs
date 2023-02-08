@@ -63,24 +63,6 @@ namespace HealthSystemManager.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("Patient");
-                });
-
-            modelBuilder.Entity("HealthSystemManager.Domain.Entities.Person", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -89,6 +71,10 @@ namespace HealthSystemManager.Infra.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HealthInsurance")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -106,7 +92,7 @@ namespace HealthSystemManager.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Person");
+                    b.ToTable("Patient");
                 });
 
             modelBuilder.Entity("HealthSystemManager.Domain.Entities.MedicalRecord", b =>
@@ -118,17 +104,6 @@ namespace HealthSystemManager.Infra.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Patient");
-                });
-
-            modelBuilder.Entity("HealthSystemManager.Domain.Entities.Patient", b =>
-                {
-                    b.HasOne("HealthSystemManager.Domain.Entities.Person", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Person");
                 });
 
             modelBuilder.Entity("HealthSystemManager.Domain.Entities.Patient", b =>

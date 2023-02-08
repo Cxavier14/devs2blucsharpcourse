@@ -22,7 +22,6 @@ namespace HealthSystemManager.Infra.Data.Context
 
         #region DbSet's
 
-        public DbSet<Person> Person { get; set; }
         public DbSet<Patient> Patient { get; set; }
         public DbSet<MedicalRecord> MedicalRecord { get; set; }
 

@@ -1,18 +1,29 @@
 ﻿using HealthSystemManager.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HealthSystemManager.Domain.DTO
 {
     public class MedicalRecordDTO
     {
+        [Display(Name = "MedicalRecord Code")]
         public int id { get; set; }
+        
+        [Display(Name = "Diagnostic")]
         public string diagnostic { get; set; }
+        
+        [Display(Name = "Appointment")]
         public DateTime medicalAppointment { get; set; }
+
+        [Display(Name = "Medication")]
         public string medication { get; set; }
+        
+        [Display(Name = "Exam")]
         public string exam { get; set; }
 
         public int patientId { get; set; }

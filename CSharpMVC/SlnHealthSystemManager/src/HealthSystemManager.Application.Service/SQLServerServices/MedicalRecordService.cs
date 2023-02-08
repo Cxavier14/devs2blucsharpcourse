@@ -18,9 +18,9 @@ namespace HealthSystemManager.Application.Service.SQLServerServices
             _repository = repository;
         }
 
-        public async Task<int> Delete(int id)
+        public async Task<int> Delete(MedicalRecordDTO medicalRecord)
         {
-            var entity = await _repository.FindById(id);
+            var entity = await _repository.FindById(medicalRecord.id);
             return await _repository.Delete(entity);
         }
 

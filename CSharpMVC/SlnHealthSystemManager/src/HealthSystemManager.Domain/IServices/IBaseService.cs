@@ -11,6 +11,6 @@ namespace HealthSystemManager.Domain.IServices
         List<T> FindAll();
         Task<T> FindById(int id);
         Task<int> Save(T entity);
-        Task<int> Delete(int id);
+        Task<int> Delete(T entity);
     }
 }

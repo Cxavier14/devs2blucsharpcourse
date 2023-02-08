@@ -1,26 +1,37 @@
 ﻿using HealthSystemManager.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HealthSystemManager.Domain.DTO
 {
-    public class PatientDTO
+    public class PatientDTO : PersonDTO
     {
+        [Display(Name = "Patient Code")]
         public int id { get; set; }
-        public virtual ICollection<MedicalRecord>? MedicalRecords { get; set; }
+        
+        [Display(Name = "Health Insurance")]
+        public string healthInsurance { get; set; }
 
-        public int personId { get; set; }
-        public virtual Person? person { get; set; }
+        [Display(Name = "Medical Records")]
+        public virtual ICollection<MedicalRecord>? medicalRecords { get; set; }
 
         public PatientDTO mapToDTO(Patient patient)
         {
             return new PatientDTO
             {
                 id = patient.Id,
-                personId = patient.PersonId
+                healthInsurance = patient.HealthInsurance,
+                name = patient.Name,
+                identityDocument = patient.IdentityDocument,
+                birthDate = patient.BirthDate,
+                phone = patient.Phone,
+                address = patient.Address,
+                city = patient.City,
             };
         }
 
@@ -29,7 +40,13 @@ namespace HealthSystemManager.Domain.DTO
             return new Patient
             {
                 Id = id,
-                PersonId = personId,
+                HealthInsurance = healthInsurance,
+                Name = name,
+                IdentityDocument = identityDocument,
+                BirthDate = birthDate,
+                Phone = phone,
+                Address = address,
+                City = city,
             };
         }
     }

@@ -18,9 +18,9 @@ namespace HealthSystemManager.Application.Service.SQLServerServices
             _repository = repository;
         }
 
-        public async Task<int> Delete(int id)
+        public async Task<int> Delete(PatientDTO patient)
         {
-            var entity = await _repository.FindById(id);
+            var entity = await _repository.FindById(patient.id);
             return await _repository.Delete(entity);
         }
 
@@ -30,17 +30,21 @@ namespace HealthSystemManager.Application.Service.SQLServerServices
                 .Select(patient => new PatientDTO
                 {
                     id = patient.Id,
-                    personId = patient.PersonId,
-                    person = patient.Person,
+                    healthInsurance = patient.HealthInsurance,
+                    name = patient.Name,
+                    identityDocument = patient.IdentityDocument,
+                    birthDate = patient.BirthDate,
+                    phone = patient.Phone,
+                    address = patient.Address,
+                    city = patient.City
                 }).ToList();
         }
-
-
 
         public async Task<PatientDTO> FindById(int id)
         {
             var entity = new PatientDTO();
             return entity.mapToDTO(await _repository.FindById(id));
+            
         }
 
         public Task<int> Save(PatientDTO entity)

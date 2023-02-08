@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace HealthSystemManager.Domain.Entities
 {
-    public class Patient
+    public class Patient : Person
     {
         public int Id { get; set; }
-        public virtual ICollection<MedicalRecord>? MedicalRecords { get; set; }
-        
-        public int PersonId { get; set; }
-        public virtual Person? Person { get; set; }
+        public string HealthInsurance { get; set; }
+        public virtual ICollection<MedicalRecord>? MedicalRecords { get; set; }                
     }
 }
