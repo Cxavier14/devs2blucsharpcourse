@@ -26,12 +26,12 @@
                             <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Patients</span>
                             </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a asp-action="Index" asp-controller="Patient" class="nav-link px-0"> <span class="d-none d-sm-inline">- List of patients</a>
+                                    <a asp-action="Index" asp-controller="Patient" class="nav-link px-0"> <span class="d-none d-sm-inline"> All Patients</a>
                                 </li>
                                 <li>
-                                    <a asp-action="Create" asp-controller="Patient" class="nav-link px-0"> <span class="d-none d-sm-inline">- Add new patient</a>
+                                    <a asp-action="Create" asp-controller="Patient" class="nav-link px-0"> <span class="d-none d-sm-inline"> Add New Patient</a>
                                 </li>
                             </ul>
                         </li>
@@ -76,6 +76,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-mask-plugin-master/src/jquery.mask.js" type="text/javascript" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -17,7 +17,7 @@
                 <td>
                     <a class="btn btn-outline-success" onclick="detailsPatient(@item.id)">Details</a>
                     <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.id">Edit</a>
-                    <a class="btn btn-outline-danger" onclick="deletePatient(@item.id)">Delete</a>
+                    <a class="btn btn-outline-danger" onclick="deletePat(@item.id)">Delete</a>
                     <a class="btn btn-outline-primary" asp-action="Index" asp-controller="MedicalRecord" asp-route-id="@item.id">Medical Records</a>
                 </td>
                 <td></td>
@@ -30,10 +30,10 @@
 
 @section scripts {
     <script>
-        const deletePatient = (id) => {
+        const deletePat = (id) => {
             $('#modal').load(`@Url.Action("Delete")/${id}`, () => {
                 $('#modal').modal('show');
-            })
+            });
         }
 
         const detailsPatient = (id) => {

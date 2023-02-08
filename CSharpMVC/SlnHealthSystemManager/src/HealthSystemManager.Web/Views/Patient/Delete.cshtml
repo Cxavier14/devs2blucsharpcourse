@@ -1,5 +1,9 @@
 ﻿@model HealthSystemManager.Domain.DTO.PatientDTO
 
+@{
+    Layout = null;
+}
+
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
@@ -18,7 +22,7 @@
 
 <script>
     $(document).ready(() => {
-        $('btn-delete').click(() => deletePatient());
+        $('#btn-delete').click(() => deletePatient());
     });
 
     const deletePatient = () => {
@@ -26,14 +30,7 @@
             url: `@Url.Action("Delete")`,
             method: 'POST',
             data: {
-                id: @Model.id,
-                healthInsurance: '@Model.healthInsurance',
-                name: '@Model.name',
-                identityDocument: '@Model.identityDocument',
-                birthDate: '@Model.birthDate',
-                phone: '@Model.phone',
-                address: '@Model.address',
-                city: '@Model.city',
+                id: @Model.id,                
             },
             success: (resp) => {
                 if (resp > 0) {
@@ -41,7 +38,7 @@
 
                     $('#alert-delete').html(alert);
                     $('#modal').modal('toggle');
-                    window.location.reload();
+                    setTimeout(() => { window.location.reload(); }, 4000);
                 }
             }
         });

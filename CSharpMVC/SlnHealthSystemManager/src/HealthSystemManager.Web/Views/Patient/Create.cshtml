@@ -15,15 +15,15 @@
     </div>
     <div class="col-md-4">
         <label asp-for="identityDocument" for="validationCustom01" class="form-label">Identity Document</label>
-        <input asp-for="identityDocument" type="text" class="form-control" id="validationCustom01" required>
+        <input asp-for="identityDocument" type="text" class="form-control" id="identityDocument" required>
     </div>
     <div class="col-md-4">
         <label asp-for="birthDate" for="validationCustom01" class="form-label">Birth Date</label>
-        <input asp-for="birthDate" type="text" class="form-control" id="validationCustom01" required>
+        <input asp-for="birthDate" type="text" class="form-control" id="birthDate" required>
     </div>
     <div class="col-md-4">
         <label asp-for="phone" for="validationCustom01" class="form-label">Phone</label>
-        <input asp-for="phone" type="text" class="form-control" id="validationCustom01" required>        
+        <input asp-for="phone" type="text" class="form-control" id="phone" required>
     </div>
     <div class="col-md-4">
         <label asp-for="address" for="validationCustom01" class="form-label">Address</label>
@@ -34,13 +34,21 @@
         <input asp-for="city" type="text" class="form-control" id="validationCustom01" required>
     </div>
     <div class="col-12">
-        <button class="btn btn-outline-success" type="submit">Submit form</button>
-        <a class="btn btn-outline-info" asp-action="Index">Back to List</a>
+        <button class="btn btn-outline-success" type="submit">Save</button>
+        <a class="btn btn-outline-info" asp-action="Index">All Patients</a>
     </div>
 </form>
 
 @section Scripts {
+    
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        $(document).ready(()=>{
+            $('#identityDocument').mask('000.000.000-00', { placeholder: "___.___.___-__" });
+            $('#birthDate').mask('00/00/0000', { placeholder: "__/__/____" });
+            $('#phone').mask('(00) 00000-0000', { placeholder: "(__) _____-____" });
+        });
+    </script>
     }

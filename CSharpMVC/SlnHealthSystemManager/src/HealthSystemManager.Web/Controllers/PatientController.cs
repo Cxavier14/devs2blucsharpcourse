@@ -2,6 +2,7 @@
 using HealthSystemManager.Domain.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace HealthSystemManager.Web.Controllers
 {
@@ -87,25 +88,37 @@ namespace HealthSystemManager.Web.Controllers
         }
 
         // GET: PatientController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var result = _patientService.FindById(id);
-            return View(result);
+            var result = await _patientService.FindById(id);
+
+            if (result == null) return NotFound();
+
+            return View(new PatientDTO
+            {
+                id= result.id,
+                healthInsurance= result.healthInsurance,
+                name= result.name,
+                identityDocument= result.identityDocument,
+                birthDate= result.birthDate,
+                phone= result.phone,
+                address= result.address,
+                city= result.city
+            });
         }
 
-        // POST: PatientController/Delete/5
+        // POST= PatientController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult<int>> Delete(int id, [Bind("id,healthInsurance,name,identityDocument,birthDate,phone,address,city")] PatientDTO patient)
         {
             try
             {
-                if (id != patient.id)
-                    return NotFound();
+                if (id != patient.id) return NotFound();
 
                 if (ModelState.IsValid)
                 {
-                    return new ActionResult<int>(await _patientService.Delete(patient));
+                    return new ActionResult<int>(await _patientService.Delete(patient.id));
                 }
             }
             catch (Exception ex)
