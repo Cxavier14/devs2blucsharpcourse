@@ -82,7 +82,7 @@ namespace RevisaoProjetoNoticia.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if (await _service.Delete(news) > 0)
+                    if (await _service.Delete(news.id) > 0)
                         return RedirectToAction(nameof(Index));
                 }
             }

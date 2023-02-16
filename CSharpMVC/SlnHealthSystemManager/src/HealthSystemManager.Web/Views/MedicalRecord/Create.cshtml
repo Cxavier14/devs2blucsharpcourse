@@ -1,0 +1,44 @@
+﻿@model HealthSystemManager.Domain.DTO.MedicalRecordDTO
+
+<h1>Add New Appointment</h1>
+
+<hr />
+
+<form asp-action="Create" class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4">
+        <label asp-for="patientId" class="control-label mb-2"></label>
+        <select asp-for="patientId" class="form-control" asp-items="ViewBag.patientId"></select>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="diagnostic" for="validationCustom02" class="form-label">Diagnostic</label>
+        <input asp-for="diagnostic" type="text" class="form-control" id="diagnostic" required>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="medicalAppointment" for="validationCustom01" class="form-label">Appointment</label>
+        <input asp-for="medicalAppointment" type="text" class="form-control" id="medicalAppointment" required>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="medication" for="validationCustom01" class="form-label">Medication</label>
+        <input asp-for="medication" type="text" class="form-control" id="medication" required>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="exam" for="validationCustom01" class="form-label">Exam</label>
+        <input asp-for="exam" type="text" class="form-control" id="exam" required>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-outline-success" type="submit">Save</button>
+        <a class="btn btn-outline-info" asp-controller="Home" asp-action="Index">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(() => {
+            $('#medicalAppointment').mask('00/00/0000', { placeholder: "__/__/____" });
+        });
+    </script>
+    }

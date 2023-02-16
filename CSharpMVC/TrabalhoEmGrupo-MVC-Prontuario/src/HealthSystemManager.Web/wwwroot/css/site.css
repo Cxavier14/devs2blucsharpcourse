@@ -1,0 +1,131 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.iconMenu {
+    width: 3.2em;
+    height: 3.2em;
+    margin-right:0.4em
+}
+
+.mybox {
+    padding: 0px;
+    margin-bottom: 50px;
+}
+
+.mybox1 {
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.gt10 {
+    margin-top: 10px;
+}
+
+.box_header {
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 25px -5px rgba(199,199,199,1);
+    -moz-box-shadow: 0px 0px 25px -5px rgba(199,199,199,1);
+    box-shadow: 0px 0px 25px -5px rgba(199,199,199,1);
+    border-bottom: 1px solid #f2f2f2;
+}
+
+    .box_header span {
+        padding-left: 15px;
+        font-size: 14px;
+        color: #4c2865;
+        font-weight: 600;
+    }
+
+.box-container {
+    background: #fff;
+    padding: 25px;
+}
+
+
+
+.bbr {
+    -webkit-box-shadow: 0px 0px 25px -5px rgba(199,199,199,1);
+    -moz-box-shadow: 0px 0px 25px -5px rgba(199,199,199,1);
+    box-shadow: 0px 0px 25px -5px rgba(199,199,199,1);
+}
+
+    .bbr .btn-danger {
+        font-size: 13px;
+        background: #891814;
+        border: none;
+    }
+
+.gv {
+    width: 100%;
+    overflow: scroll;
+}
+
+
+.myGridClass {
+    width: 100%;
+    background-color: #fff;
+    margin: 5px 0 10px 0;
+    border: solid 1px #6c3156;
+    border-collapse: collapse;
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+
+    .myGridClass td {
+        padding: 2px;
+        font-size: 12px;
+        text-align: left;
+        line-height: 22px;
+        border: solid 1px #6c3156;
+        color: #000;
+    }
+
+
+    .myGridClass th {
+        padding: 4px 2px;
+        color: #fff;
+        text-align: center;
+        line-height: 25px;
+        font-weight: 500;
+        font-size: 12px;
+        background: #80446a;
+        border-left: solid 1px #6c3156;
+        font-family: 'Encode Sans Expanded', sans-serif;
+    }
+
+.masthead {
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+}
+
+    .masthead .masthead-heading {
+        font-size: 2.75rem;
+        line-height: 2.75rem;
+    }
+
+    .masthead .masthead-subheading {
+        font-size: 1.25rem;
+    }
+
+    .masthead .masthead-avatar {
+        width: 15rem;
+    }

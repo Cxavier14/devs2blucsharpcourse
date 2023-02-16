@@ -1,0 +1,46 @@
+﻿@model HealthSystemManager.Domain.DTO.PatientDTO
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Delete</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="alert-delete" class="modal-body">
+            <p>Are you sure you want to delete @Model.name?</p>
+        </div>
+        <div class="modal-footer">
+            <button id="btn-delete" type="button" class="btn btn-outline-danger">Delete</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(() => {
+        $('#btn-delete').click(() => deletePatient());
+    });
+
+    const deletePatient = () => {
+        $.ajax({
+            url: `@Url.Action("Delete")`,
+            method: 'POST',
+            data: {
+                id: @Model.id,                
+            },
+            success: (resp) => {
+                if (resp > 0) {
+                    let alert = `<div class="alert alert-danger" role="alert">Patient deleted!</div>`;
+
+                    $('#alert-delete').html(alert);
+                    $('#modal').modal('toggle');
+                    setTimeout(() => { window.location.reload(); }, 4000);
+                }
+            }
+        });
+    }
+</script>
