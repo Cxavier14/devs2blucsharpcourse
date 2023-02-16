@@ -9,5 +9,6 @@ namespace HealthSystemManager.Domain.IServices
 {
     public interface IMedicalRecordsService : IBaseService<MedicalRecordDTO>
     {
+        List<MedicalRecordDTO> FindAllRecords(int id);
     }
 }

@@ -1,10 +1,11 @@
-﻿@model HealthSystemManager.Domain.DTO.MedicalRecordDTO
+﻿@model IEnumerable<HealthSystemManager.Domain.DTO.MedicalRecordDTO>
 
 <h1>Records</h1>
 
 <table class="table">
     <thead>
         <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.patient.Name)</th>
             <th scope="col">@Html.DisplayNameFor(model => model.diagnostic)</th>
             <th scope="col">@Html.DisplayNameFor(model => model.medicalAppointment)</th>
             <th scope="col">@Html.DisplayNameFor(model => model.medication)</th>
@@ -13,17 +14,21 @@
         </tr>
     </thead>
     <tbody class="table-group-divider">
-        <tr>
-            <td>@Html.DisplayFor(model => model.diagnostic)</td>
-            <td>@Html.DisplayFor(model => model.medicalAppointment)</td>
-            <td>@Html.DisplayFor(model => model.medication)</td>
-            <td>@Html.DisplayFor(model => model.exam)</td>
-            <td>
-                <a class="btn btn-outline-primary" asp-action="Create" asp-route-id="@Model.id" >Add new appointment</a>
-                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@Model.id">Edit</a>
-            </td>
-            <td><a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Model.id">Delete</a></td>
-        </tr>
-
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.patient.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.diagnostic)</td>
+                <td>@Html.DisplayFor(modelItem => item.medicalAppointment)</td>
+                <td>@Html.DisplayFor(modelItem => item.medication)</td>
+                <td>@Html.DisplayFor(modelItem => item.exam)</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="Create" asp-route-id="@item.id">New Appointment</a>
+                    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                </td>
+                <td><a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.id">Delete</a></td>
+            </tr>
+        }
     </tbody>
 </table>
+<a class="btn btn-outline-info mt-5" asp-controller="Patient" asp-action="Index">Back to List</a>

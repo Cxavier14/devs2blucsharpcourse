@@ -34,8 +34,26 @@ namespace HealthSystemManager.Application.Service.SQLServerServices
                     medicalAppointment = medicalRecord.MedicalAppointment,
                     medication = medicalRecord.Medication,
                     exam = medicalRecord.Exam,
-                    patientId = medicalRecord.PatientId
+                    patientId = medicalRecord.PatientId,
+                    patient = medicalRecord.Patient
                 }).ToList();
+        }
+
+        public List<MedicalRecordDTO> FindAllRecords(int id)
+        {
+            return _repository.FindAll()
+                .Select(medicalRecord => new MedicalRecordDTO
+                {
+                    id = medicalRecord.Id,
+                    diagnostic = medicalRecord.Diagnostic,
+                    medicalAppointment = medicalRecord.MedicalAppointment,
+                    medication = medicalRecord.Medication,
+                    exam = medicalRecord.Exam,
+                    patientId = medicalRecord.PatientId,
+                    patient = medicalRecord.Patient,                    
+                })
+                .Where(m => m.patientId == id)
+                .ToList();
         }
 
         public async Task<MedicalRecordDTO> FindById(int id)

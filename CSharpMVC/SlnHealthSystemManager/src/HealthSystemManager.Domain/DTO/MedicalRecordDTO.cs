@@ -18,6 +18,7 @@ namespace HealthSystemManager.Domain.DTO
         public string diagnostic { get; set; }
         
         [Display(Name = "Appointment")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]        
         public DateTime medicalAppointment { get; set; }
 
         [Display(Name = "Medication")]
@@ -26,8 +27,9 @@ namespace HealthSystemManager.Domain.DTO
         [Display(Name = "Exam")]
         public string exam { get; set; }
 
+        [Display(Name ="Patient")]
         public int patientId { get; set; }
-        public virtual Patient? Patient { get; set; }
+        public Patient? patient { get; set; }
 
         public MedicalRecordDTO mapToDTO(MedicalRecord medicalRecord)
         {
@@ -38,7 +40,8 @@ namespace HealthSystemManager.Domain.DTO
                 medicalAppointment = medicalRecord.MedicalAppointment,
                 medication = medicalRecord.Medication,
                 exam = medicalRecord.Exam,
-                patientId = medicalRecord.PatientId
+                patientId = medicalRecord.PatientId,
+                patient = medicalRecord.Patient
             };
         }
 
@@ -51,7 +54,8 @@ namespace HealthSystemManager.Domain.DTO
                 MedicalAppointment = medicalAppointment,
                 Medication = medication,
                 Exam = exam,
-                PatientId = patientId
+                PatientId = patientId,
+                Patient = patient,
             };
         }
     }

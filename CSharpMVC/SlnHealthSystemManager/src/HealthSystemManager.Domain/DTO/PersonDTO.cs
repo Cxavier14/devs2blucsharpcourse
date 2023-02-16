@@ -19,6 +19,7 @@ namespace HealthSystemManager.Domain.DTO
         public string identityDocument { get; set; }
         
         [Display(Name = "Birth Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime birthDate { get; set; }
         
         [Display(Name = "Phone")]

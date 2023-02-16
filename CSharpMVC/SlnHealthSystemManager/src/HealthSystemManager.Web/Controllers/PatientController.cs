@@ -94,27 +94,18 @@ namespace HealthSystemManager.Web.Controllers
 
             if (result == null) return NotFound();
 
-            return View(new PatientDTO
-            {
-                id= result.id,
-                healthInsurance= result.healthInsurance,
-                name= result.name,
-                identityDocument= result.identityDocument,
-                birthDate= result.birthDate,
-                phone= result.phone,
-                address= result.address,
-                city= result.city
-            });
+            return View(result);
         }
 
         // POST= PatientController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult<int>> Delete(int id, [Bind("id,healthInsurance,name,identityDocument,birthDate,phone,address,city")] PatientDTO patient)
         {
             try
             {
-                if (id != patient.id) return NotFound();
+                if (id != patient.id)
+                    return NotFound();
 
                 if (ModelState.IsValid)
                 {

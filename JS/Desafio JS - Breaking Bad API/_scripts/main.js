@@ -37,7 +37,7 @@ const assignNewsletter = () => {
     listNewsletter.push(userNews);
   }
   
-
+  
   setJsonItem(LIST_NEWSLETTER, listNewsletter);
   cleanNews();
   console.log(`Newsletter assinada por ${userNews.name} com sucesso!`);
