@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HealthSystemManager.Domain.DTO.PatientDTO>
+
+<h4>Patients</h4>
+
+<table class="table">
+    <thead>
+        <form method="post" action="Patient/GetPatientName">
+            <input type="text" id="name" name="name">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.name)</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>                    
+                    <a asp-action="Details" asp-route-id="@item.id">@Html.DisplayFor(modelItem => item.name)</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

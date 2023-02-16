@@ -1,0 +1,67 @@
+﻿@model HealthSystemManager.Web.Models.MedicalRecodsViewModel
+
+<div class="container-fluid">
+    <div class="col-md-12 mybox">
+        <div class="row">
+            <div class="col-md-6 gt10">
+                <div class="box_header"><span>Patient Data</span></div>
+                <div class="box-container bbr row g-0">
+                    <div class="form-group col-md-4">
+                        <img class="masthead-avatar mb-5 img-thumbnail" style="width:14rem;" src="~/img/healthSysImg.png" alt="..." />
+                    </div>
+                    <div class="col-md-8">
+                        <p>Name: @Model.oPatient.name</p>
+                        <p>Birth Date: @Model.oPatient.birthDate</p>
+                        <p>City: @Model.oPatient.city</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gt10">
+                <div class="box_header"><span>Personal Detail</span></div>
+                <div class="box-container bbr">
+                    <div class="form-group">
+                        <p>Health Insurance: @Model.oPatient.healthInsurance</p>
+                    </div>
+                    <div class="form-group">
+                        <p>Address: @Model.oPatient.identityDocument</p>
+                    </div>
+                    <div class="form-group">
+                        <p>Address: @Model.oPatient.address</p>
+                    </div>
+                    <div class="form-group">
+                        <p>Phone: @Model.oPatient.phone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="box_header"><span>Medical Records</span></div>
+    <div class="col-md-12 mybox1">
+        <div class="box-container bbr">
+            <div class="gv">
+                <table width="100%" border="0" class="myGridClass" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="5%" height="33" align="center"><strong>#</strong></td>
+                        <td width="16%" align="center"><strong>Medical Appointment</strong></td>
+                        <td width="32%" align="center"><strong>Diagnostic</strong></td>
+                        <td width="19%" align="center"><strong>Medication</strong></td>
+                        <td width="13%" align="center"><strong>Exam</strong></td>
+                    </tr>
+                    @foreach (var item in Model.ListMedicalRec)
+                    {
+                        <tr>
+                            <td width="5%" height="33" align="center"><strong>@item.id</strong></td>
+                            <td width="16%" align="center">@item.medicalAppointment</td>
+                            <td width="32%" align="center">@item.diagnostic</td>
+                            <td width="19%" align="center">@item.medication</td>
+                            <td width="13%" align="center">@item.exam</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
