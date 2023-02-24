@@ -1,1 +1,12 @@
-<p>details works!</p>
+<!-- https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif -->
+<div class="row">
+  <div class="row">
+    <h5 class="card-title">{{ pokemon.name| titlecase }}</h5>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img style="max-width: 10rem;" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/{{pokemon.id}}.gif" class="card-img-top" alt="...">
+      <!-- <img src="{{pokemon.sprites?.front_default}}" class="card-img-top" alt="..."> -->
+    </div>
+  </div>
+</div>

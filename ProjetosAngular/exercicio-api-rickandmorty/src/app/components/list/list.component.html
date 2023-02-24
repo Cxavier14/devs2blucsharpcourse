@@ -1,0 +1,12 @@
+<div class="row row-cols-1 row-cols-md-3">
+  <div class="col" *ngFor="let item of resultList$ | async">
+    <div class="card mb-2 swing">
+      <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+      <div class="card-body">
+        <p class="card-title">Name: {{ item.name | titlecase }}</p>
+        <p class="card-text">Species: {{ item.species }}</p>
+        <p class="card-text">Status: {{ item.status }}</p>
+      </div>
+    </div>
+  </div>
+</div>
