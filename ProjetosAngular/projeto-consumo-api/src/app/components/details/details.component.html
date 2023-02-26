@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="row mb-2">
+    <h1 class="card-title">{{ pokemon.name| titlecase }}</h1>
+    <hr>
+  </div>
+  <div class="col-4">
+    <div class="card" style="width: 18rem;">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/{{pokemon.id}}.gif" class="card-img-top" alt="...">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card" style="width: 18rem;">
+      <img style="max-width: 17rem;" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/{{pokemon.id}}.gif" class="card-img-top" alt="...">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card" style="width: 18rem;">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/{{pokemon.id}}.gif" class="card-img-top" alt="...">
+    </div>
+  </div>
+</div>
+  <!-- <img src="{{pokemon.sprites?.front_default}}" class="card-img-top" alt="..."> -->

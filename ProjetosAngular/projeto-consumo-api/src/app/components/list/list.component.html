@@ -1,0 +1,11 @@
+<div class="row">
+  <div *ngFor="let item of resultList$ | async" class="col-4 mb-1">
+    <div class="card" style="width: 18rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name | titlecase }}</h5>
+        <a routerLink="/detail/{{ item.name }}" class="btn btn-outline-secondary">See {{ item.name }}</a>
+      </div>
+    </div>
+  </div>
+</div>
