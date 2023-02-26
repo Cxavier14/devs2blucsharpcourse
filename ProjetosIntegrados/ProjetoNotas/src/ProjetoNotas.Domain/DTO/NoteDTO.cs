@@ -10,13 +10,41 @@ namespace ProjetoNotas.Domain.DTO
 {
     public class NoteDTO
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public CategoryEnum Category { get; set; }
-        public bool Fixed { get; set; }
-        public DateTime TimeNote { get; set; }
-        public virtual User? User { get; set; }
+        public int id { get; set; }
+        public int userId { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public CategoryEnum category { get; set; }
+        public bool pinned { get; set; }
+        public DateTime timeNote { get; set; }
+        public virtual User? user { get; set; }
+
+        public NoteDTO mapToDTO(Note note)
+        {
+            return new NoteDTO()
+            {
+                id = note.Id,
+                userId = note.UserId,
+                title = note.Title,
+                description = note.Description,
+                category = note.Category,
+                pinned = note.Pinned,
+                timeNote = note.TimeNote,
+            };
+        }
+
+        public Note mapToEntity()
+        {
+            return new Note()
+            {
+                Id = id,
+                UserId = userId,
+                Title = title,
+                Description = description,
+                Category = category,
+                Pinned = pinned,
+                TimeNote = timeNote,
+            };
+        }
     }
 }

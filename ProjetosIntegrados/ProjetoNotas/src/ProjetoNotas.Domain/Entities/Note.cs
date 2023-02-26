@@ -14,7 +14,7 @@ namespace ProjetoNotas.Domain.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public CategoryEnum Category { get; set; }
-        public bool Fixed { get; set; }
+        public bool Pinned { get; set; }
         public DateTime TimeNote { get; set; }
         public virtual User? User { get; set; }
     }
