@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Pokemon {\n  constructor(obj) {\n    this.sprites = new Sprite({});\n    Object.assign(this, obj);\n  }\n}\nexport class Sprite {\n  constructor(obj) {\n    Object.assign(this, obj);\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
