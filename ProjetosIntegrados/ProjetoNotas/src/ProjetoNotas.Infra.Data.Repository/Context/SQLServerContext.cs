@@ -11,23 +11,23 @@ namespace ProjetoNotas.Infra.Data.Repository.Context
     public class SQLServerContext : DbContext
     {
         public SQLServerContext(DbContextOptions<SQLServerContext> options) : base(options)
-        {
-
-        }
+        {   }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Note>()
-                .HasOne(u => u.User)
-                .WithMany(n => n.Notes)
-                .HasForeignKey(u => u.UserId);
+            // Seed
+            modelBuilder.Entity<User>()
+                .HasData(                
+                new { Id = 1, Name = "Xaropinho", Login = "rapaz", Password = "123456" }
+                );
+
             base.OnModelCreating(modelBuilder);
         }
 
         #region DbSet's
 
-        public DbSet<User> User { get; set; }
-        public DbSet<Note> Note { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Note> Notes { get; set; }
 
         #endregion
     }

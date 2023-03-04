@@ -14,7 +14,7 @@ namespace ProjetoNotas.Domain.DTO
         public string login { get; set; }
         public string password { get; set; }
 
-        public virtual ICollection<Note>? notes { get; set; }
+        public virtual ICollection<NoteDTO>? notes { get; set; }
 
         public UserDTO mapToDTO(User user)
         {

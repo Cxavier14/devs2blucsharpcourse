@@ -41,7 +41,8 @@ namespace HealthSystemManager.Application.Service.SQLServerServices
 
         public List<MedicalRecordDTO> FindAllRecords(int id)
         {
-            return _repository.FindAll()
+            var result = _repository.FindAll()
+                .Where(m => m.PatientId == id)                
                 .Select(medicalRecord => new MedicalRecordDTO
                 {
                     id = medicalRecord.Id,
@@ -50,10 +51,13 @@ namespace HealthSystemManager.Application.Service.SQLServerServices
                     medication = medicalRecord.Medication,
                     exam = medicalRecord.Exam,
                     patientId = medicalRecord.PatientId,
-                    patient = medicalRecord.Patient,                    
+                    patient = medicalRecord.Patient,
                 })
-                .Where(m => m.patientId == id)
                 .ToList();
+            if(result.Count > 0)
+                return result;
+
+            return new List<MedicalRecordDTO>();
         }
 
         public async Task<MedicalRecordDTO> FindById(int id)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoNotas.Domain.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace ProjetoNotas.Domain.Interfaces.IService
 {
     public interface IUserService
     {
+        List<UserDTO> FindAll();
+        Task<UserDTO> FindById(int id);
+        Task<int> Save(UserDTO entity);
+        Task<int> Update(UserDTO entity);
+        Task<int> Delete(UserDTO entity);
     }
 }

@@ -17,7 +17,7 @@ namespace ProjetoNotas.Domain.DTO
         public CategoryEnum category { get; set; }
         public bool pinned { get; set; }
         public DateTime timeNote { get; set; }
-        public virtual User? user { get; set; }
+        public virtual UserDTO? user { get; set; }
 
         public NoteDTO mapToDTO(Note note)
         {
