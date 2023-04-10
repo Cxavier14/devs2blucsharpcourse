@@ -3,6 +3,8 @@ using ProjetoNotas.Domain.Interfaces.IService;
 
 namespace ProjetoNotas.Application.API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class NoteController : Controller
     {
         private readonly INoteService _service;

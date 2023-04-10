@@ -4,6 +4,8 @@ using ProjetoNotas.Domain.Interfaces.IService;
 
 namespace ProjetoNotas.Application.API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class UserController : Controller
     {
         private readonly IUserService _service;
@@ -13,20 +15,33 @@ namespace ProjetoNotas.Application.API.Controllers
             _service = service;
         }
 
-        // Get users
+        // Get Users
         [Route("GetUsers")]
         [HttpGet]
-        public List<UserDTO> GetUsers()
+        public JsonResult GetUsers()
         {
-            return _service.FindAll();
+            var list = _service.FindAll();
+            return Json(list);
         }
 
-        // Get by id
-        [HttpGet("/{id}")]
-        public Task<UserDTO> GetById(int id)
+        // Get By Id
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var result = _service.FindById(id);
+            
+            return Json(result);
+        }
+
+        /*public List<UserDTO> GetUsers()
+        {
+            return _service.FindAll();
+        }*/
+
+        /*public Task<UserDTO> GetById(int id)
         {
             return _service.FindById(id);
-        }
+        }*/
 
         /*[HttpGet]        
         public JsonResult ListJson()
