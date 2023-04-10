@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListComponent } from './components/list/list.component';
 import { DetailsComponent } from './components/details/details.component';
+import { RandomComponent } from './components/random/random.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DetailsComponent } from './components/details/details.component';
     HomeComponent,
     NavbarComponent,
     ListComponent,
-    DetailsComponent
+    DetailsComponent,
+    RandomComponent
   ],
   imports: [
     BrowserModule,

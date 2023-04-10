@@ -19,4 +19,9 @@ export class ApiService {
   getPokemonByName(name: string) {
     return this.http.get<Pokemon>(`${this.URL_API}/${name}`);
   }
+
+  getRandomPokemon() {
+    const array: number[] = Array(1).fill(1).map(() => Math.floor(1000 * Math.random()));
+    return this.http.get<Pokemon>(`${this.URL_API}/${array}`);
+  }
 }

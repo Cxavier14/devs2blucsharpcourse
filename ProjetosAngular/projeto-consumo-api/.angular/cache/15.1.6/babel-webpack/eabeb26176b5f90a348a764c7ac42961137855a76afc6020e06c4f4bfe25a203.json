@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class DetailModel {}","map":{"version":3,"mappings":"AAAA,OAAM,MAAOA,WAAW","names":["DetailModel"],"sourceRoot":"","sources":["C:\\Devs2Blu\\ProjetosAngular\\projeto-consumo-api\\src\\app\\models\\detail-model.ts"],"sourcesContent":["export class DetailModel {\n}\n"]},"metadata":{},"sourceType":"module","externalDependencies":[]}

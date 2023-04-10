@@ -16,24 +16,26 @@ namespace HealthSystemManager.Web.Controllers
             _patientService = patientService;
         }
 
-        public async Task<IActionResult> Index (int id)
-        {            
-            if (await _service.FindById(id) == null)
-                return RedirectToAction($"NoRecords({id})");
-
+        public async Task<IActionResult> Index(int id)
+        {
             var result = _service.FindAllRecords(id);
-
-            return View(result);
+            if (result.Count > 0)
+            {
+                return View(result);
+            }
+            return await NoRecords(id);
         }
 
         public async Task<IActionResult> NoRecords(int id)
         {
-            return View(await _patientService.FindById(id));
+            var response = await _patientService.FindById(id);
+            var med = await _service.FindById(id);
+            return View(med);
         }
 
         public IActionResult Create()
         {
-            ViewData["patientId"] = new SelectList(_patientService.FindAll(), "id", "name", "Select...");            
+            ViewData["patientId"] = new SelectList(_patientService.FindAll(), "id", "name", "Select...");
             return View();
         }
 
