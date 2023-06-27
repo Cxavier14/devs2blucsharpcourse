@@ -13,6 +13,6 @@ namespace ProjetoNotas.Domain.Entities
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public virtual ICollection<Note>? Notes { get; set; }
+        public virtual ICollection<Note> Notes { get; set; }
     }
 }

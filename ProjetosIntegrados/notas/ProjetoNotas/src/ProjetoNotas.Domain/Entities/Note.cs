@@ -10,12 +10,12 @@ namespace ProjetoNotas.Domain.Entities
     public class Note
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public CategoryEnum Category { get; set; }
         public bool Pinned { get; set; }
         public DateTime TimeNote { get; set; }
+        public int UserId { get; set; }
         public virtual User? User { get; set; }
     }
 }

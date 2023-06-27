@@ -4,8 +4,8 @@ using ProjetoNotas.Domain.Interfaces.IService;
 
 namespace ProjetoNotas.Application.API.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class UserController : Controller
     {
         private readonly IUserService _service;
@@ -16,37 +16,70 @@ namespace ProjetoNotas.Application.API.Controllers
         }
 
         // Get Users
-        [Route("GetUsers")]
         [HttpGet]
-        public JsonResult GetUsers()
+        public List<UserDTO> GetUsers()
         {
-            var list = _service.FindAll();
-            return Json(list);
+            try
+            {
+                var result = _service.FindAll();
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Ocorreu um erro ao tentar buscar os usuários! Erro:{e.Message}");
+            }
+
         }
 
         // Get By Id
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public Task<UserDTO> GetById(int id)
         {
-            var result = _service.FindById(id);
-            
-            return Json(result);
+            try
+            {
+                var result = _service.FindById(id);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Ocorreu um erro ao tentar buscar o usuário! Erro:{e.Message}");
+            }
         }
 
-        /*public List<UserDTO> GetUsers()
+        // Save / Update
+        [HttpPost]
+        public async Task<IActionResult> SaveUser(UserDTO dto)
         {
-            return _service.FindAll();
-        }*/
+            try
+            {
+                var result = await _service.Save(dto);
+                return result > 0 ? Ok(result) : NoContent();      
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Ocorreu um erro inesperado! Erro:{e.Message}");
+            }
+        }
 
-        /*public Task<UserDTO> GetById(int id)
+        // Delete
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUser(int id)
         {
-            return _service.FindById(id);
-        }*/
+            try
+            {
+                var result = await _service.FindById(id);
 
-        /*[HttpGet]        
-        public JsonResult ListJson()
-        {
-            return Json(_service.FindAll());
-        }*/
+                if (result == null) return NoContent();
+
+                if (await _service.Delete(id) > 0) 
+                    return Ok("Deletado com sucesso");
+                else
+                    return NoContent();
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Ocorreu um erro ao tentar apagar o registro! Erro:{e.Message}");
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ProjetoNotas.Domain.DTO;
+using ProjetoNotas.Domain.Entities;
 using ProjetoNotas.Domain.Interfaces.IRepository;
 using ProjetoNotas.Domain.Interfaces.IService;
 using System;
@@ -18,9 +19,13 @@ namespace ProjetosNotas.Application.Service.SQLServerServices
             _repository = repository;
         }
 
-        public Task<int> Delete(UserDTO entity)
+        public async Task<int> Delete(int id)
         {
-            throw new NotImplementedException();
+            var result = await _repository.FindById(id);
+
+            if (result != null) 
+                return await _repository.Delete(result);
+            return 0;
         }
 
         public List<UserDTO> FindAll()
@@ -32,6 +37,7 @@ namespace ProjetosNotas.Application.Service.SQLServerServices
                     name = u.Name,
                     login = u.Login,
                     password = u.Password,
+                    notes = (ICollection<NoteDTO>)u.Notes
                 }).ToList();
         }
 
@@ -41,14 +47,15 @@ namespace ProjetosNotas.Application.Service.SQLServerServices
             return dto.mapToDTO(await _repository.FindById(id));
         }
 
-        public Task<int> Save(UserDTO entity)
+        public async Task<int> Save(UserDTO dto)
         {
-            throw new NotImplementedException();
-        }
+            var result = await _repository.FindById(dto.id);
 
-        public Task<int> Update(UserDTO entity)
-        {
-            throw new NotImplementedException();
+            if (result != null)
+                return await _repository.Update(dto.mapToEntity());
+            else
+                return await _repository.Save(dto.mapToEntity());
+
         }
     }
 }

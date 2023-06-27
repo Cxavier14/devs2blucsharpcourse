@@ -12,7 +12,6 @@ namespace ProjetoNotas.Domain.Interfaces.IService
         List<NoteDTO> FindAll();
         Task<NoteDTO> FindById(int id);
         Task<int> Save(NoteDTO entity);
-        Task<int> Update(NoteDTO entity);
         Task<int> Delete(NoteDTO entity);
     }
 }

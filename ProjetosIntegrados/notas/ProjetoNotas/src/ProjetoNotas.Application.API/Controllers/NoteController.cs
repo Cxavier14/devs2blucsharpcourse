@@ -14,6 +14,7 @@ namespace ProjetoNotas.Application.API.Controllers
             _service = service;
         }
 
+        [HttpGet]
         public JsonResult Index()
         {
             var list = _service.FindAll();

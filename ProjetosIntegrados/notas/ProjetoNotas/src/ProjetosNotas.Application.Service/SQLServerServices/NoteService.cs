@@ -46,10 +46,5 @@ namespace ProjetosNotas.Application.Service.SQLServerServices
         {
             throw new NotImplementedException();
         }
-
-        public Task<int> Update(NoteDTO entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

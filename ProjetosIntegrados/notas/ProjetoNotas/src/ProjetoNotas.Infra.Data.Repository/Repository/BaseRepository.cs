@@ -14,45 +14,36 @@ namespace ProjetoNotas.Infra.Data.Repository.Repository
 
         public BaseRepository(SQLServerContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
-        public Task<int> Delete(T entity)
+        public async Task<int> Delete(T entity)
         {
-            this._context.Set<T>().Remove(entity);
-            return this._context.SaveChangesAsync();
+            _context.Set<T>().Remove(entity);
+            return await _context.SaveChangesAsync();
         }
 
         public List<T> FindAll()
         {
-            return this._context
-                        .Set<T>()
-                        .ToList<T>();
+            return _context.Set<T>().ToList<T>();
         }
 
         public async Task<T> FindById(int id)
         {
-            return await this._context.Set<T>().FindAsync(id);
+            return await _context.Set<T>().FindAsync(id);            
         }
 
-        public Task<int> Save(T entity)
+        public async Task<int> Save(T entity)
         {
-            this._context.Set<T>().Add(entity);
-            return this._context.SaveChangesAsync();
+            _context.Set<T>().Add(entity);
+            return await _context.SaveChangesAsync();
+
         }
 
-        public Task<int> Update(T entity)
+        public async Task<int> Update(T entity)
         {
-            try
-            {
-                this._context.Set<T>().Update(entity);
-                return this._context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                var text = ex.Message;
-                return this._context.SaveChangesAsync();
-            }
+            _context.Set<T>().Update(entity);
+            return await _context.SaveChangesAsync();
         }
     }
 }

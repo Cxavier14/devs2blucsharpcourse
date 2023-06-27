@@ -15,7 +15,7 @@ builder.Services.AddCors(
         options.AddPolicy(name: "NoteCors",
             builder =>
             {
-                builder.WithOrigins("*");
+                builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
             });
     });
 
@@ -36,6 +36,11 @@ builder.Services.AddScoped<INoteRepository, NoteRepository>();
 // # Services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<INoteService, NoteService>();
+
+/*builder.Services.AddCors(p => p.AddPolicy("NoteCors", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));*/
 
 var app = builder.Build();
 

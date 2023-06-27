@@ -9,5 +9,6 @@ namespace ProjetoNotas.Domain.Interfaces.IRepository
 {
     public interface IUserRepository : IBaseRepository<User>
     {
+        Task<List<User>> FindUserWithNotes();
     }
 }
